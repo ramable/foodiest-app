@@ -1,0 +1,129 @@
+@media screen and (max-width: 600px) {
+    :root {
+        --font-size: 1.4rem !important;
+        --ratio: .2rem !important;
+        --max-font-size: var(--h1) !important;
+    }
+
+    .body-home {
+        padding: 4rem 0;
+    }
+
+    .body-detail {
+        padding: 2rem 0;
+    }
+
+    .row-resto {
+        grid-template-columns: 1fr !important;
+    }
+
+    .card-text {
+        padding: 0 2rem 1rem;
+    }
+
+    .rating-wrapper {
+        font-size: 1.2rem;
+        margin: 2rem 0;
+        padding: 0 2rem;
+        height: 3.5rem;
+    }
+
+    .icon-rating {
+        font-size: 2rem;
+    }
+
+    .review-card {
+        padding: 2rem 3rem;
+    }
+
+    .reviewer-wrapper {
+        font-size: 1.4rem;
+    }
+
+    .like-icon-button {
+        width: 5rem;
+        height: 5rem;
+        font-size: 3.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0 2rem !important;
+    }
+
+    .main-element {
+        top: -6.2rem !important;
+    }
+
+    .card-image>img {
+        height: 15rem;
+    }
+
+    .like-icon-button {
+        top: 61.5vh !important;
+    }
+
+    .body-favorite {
+        padding: 9rem 0;
+    }
+
+    .empty-state-wrapper img {
+        width: 25rem;
+        margin: 2rem 0;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+    .row-resto {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem 3rem;
+        padding: 1rem 0;
+    }
+
+    .like-icon-button {
+        top: 62.5vh;
+    }
+
+    .fixed-state {
+        position: fixed;
+        left: 0;
+        z-index: 99;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .container {
+        padding: 0 4rem;
+    }
+
+    .like-icon-wrapper {
+        margin: 0;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .container {
+        width: 1140px !important;
+    }
+}
+
+@media only screen and (min-width: 1366px) {
+    .container {
+        width: 1200px !important;
+    }
+}
+
+@media only screen and (min-width: 1533px) {
+    .container {
+        width: 1330px !important;
+    }
+}
+
+@media only screen and (min-width: 1920px) {
+    .container {
+        width: 1400px !important;
+    }
+}

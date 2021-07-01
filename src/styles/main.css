@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap');
+@import './component/empty-states.css';
+@import './component/cards.css';
+@import './component/elements.css';
+@import './pages/details.css';
+@import './pages/responsive.css';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 2;
+    color: #393d43;
+}
+
+:root {
+    --max-font-size: 6.7rem;
+    --min-font-size: 1.2rem;
+    --font-size: 1.6rem;
+    --ratio: .4rem;
+
+    --h6: var(--font-size);
+    --h5: calc(var(--h6) + var(--ratio));
+    --h4: calc(var(--h5) + var(--ratio));
+    --h3: calc(var(--h4) + var(--ratio));
+    --h2: calc(var(--h3) + var(--ratio));
+    --h1: calc(var(--h2) + var(--ratio));
+}
+
+p {
+    font-size: var(--h6);
+    margin-bottom: 1.6rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 1rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: var(--h1);
+}
+
+h2 {
+    font-size: var(--h2);
+}
+
+h3 {
+    font-size: var(--h3);
+}
+
+h4 {
+    font-size: var(--h4);
+}
+
+h5 {
+    font-size: var(--h5);
+}
+
+h6 {
+    font-size: var(--h6);
+}
+
+small {
+    font-size: 1.2rem;
+}
+
+b {
+    font-weight: 700;
+}
+
+a {
+    text-decoration: unset;
+    color: unset;
+}
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
