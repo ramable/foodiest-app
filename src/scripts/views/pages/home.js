@@ -6,7 +6,7 @@ import {
 const Home = {
     async render() {
         return `
-            <button id="skip__button" class="skip-link" tabindex="1" type="button">Menuju ke konten</button>
+            <a href="#content__home" id="skip__button" class="skip-link" tabindex="1">Menuju ke konten</a>
             <hero-banner></hero-banner>
             <section class="body-home" id="content__home">
                 <div class="container">
@@ -17,8 +17,8 @@ const Home = {
                             <div id="resto__card" class="row-resto"></div>
                         </div>
                         <div id="searchResult__resto" class="hidden">
-                            <h3 id="heading__page" class="skip-on-tab" tabindex="0"><b>Hasil Pencarian</b></h3>
-                            <p id="title__search" class="skip-on-tab" tabindex="0"></p>
+                            <h3 id="heading__page" tabindex="0"><b>Hasil Pencarian</b></h3>
+                            <p id="title__search" tabindex="0"></p>
                             <div id="search__card" class="row-resto"></div>
                         </div>
                     </div>
@@ -74,7 +74,8 @@ const Home = {
                 skipButton.click();
             });
 
-            skipButton.addEventListener('click', () => {
+            skipButton.addEventListener('click', (event) => {
+                event.preventDefault();
                 const windowHeight = window.screen.height;
                 const windowWidth = window.screen.width;
                 if (windowWidth === 320) {

@@ -6,12 +6,12 @@ import {
 const Favorite = {
     async render() {
         return `
-        <button id="skip__button" class="skip-link" tabindex="1" type="button">Menuju ke konten</button>
+        <a href="#content__favorite" id="skip__button" class="skip-link" tabindex="1">Menuju ke konten</a>
         <section class="body-favorite" id="content__favorite">
             <div class="empty-state-wrapper fixed-state container" id="empty__state">
                 <img src="../images/undraw_empty_xct9.svg" alt="">
-                <h1>Hmm... kosong &#128564</h1>
-                <p>Kamu belum punya restaurant favorit. <br> Yuk, isi dengan restaurant terbaik lainnya <a href="#/home">di sini</a></p>
+                <h1 tabindex="0">Hmm... kosong &#128564</h1>
+                <p tabindex="0">Kamu belum punya restaurant favorit. <br> Yuk, isi dengan restaurant terbaik lainnya <a href="#/home" aria-label="tautan menuju homepage">di sini</a></p>
             </div>
             <div class="container">
                 <h3 id="heading__page" class="hidden" tabindex="0"><b>Restoran Favoritmu &#128077</b></h3>
@@ -39,7 +39,8 @@ const Favorite = {
             headingPage.classList.add('hidden');
         }
 
-        skipButton.addEventListener('click', () => {
+        skipButton.addEventListener('click', (event) => {
+            event.preventDefault();
             headingPage.focus();
             document.querySelectorAll('.skip-on-tab').forEach((e) => {
                 e.tabIndex = '1';
