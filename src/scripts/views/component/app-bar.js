@@ -104,19 +104,20 @@ class AppBar extends HTMLElement {
                 }
             
                 .wrapper-header {
-                    grid-template-columns: auto 1fr auto;
+                    grid-template-columns: auto 1fr;
                     gap: 1rem;
                 }
             
                 .app-bar-menu {
                     display: block;
+                    justify-self: right;
                 }
             
                 .app-bar-menu button {
-                    padding: 1.5rem 2.5rem 1.5rem 0;
+                    padding: 1.5rem 0 1.5rem 2.5rem;
                     color: white;
                 }
-            
+
                 .app-bar-brand a {
                     padding: 1.5rem 1.5rem 1.5rem 0;
                 }
@@ -133,6 +134,8 @@ class AppBar extends HTMLElement {
                     -moz-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
                     overflow: hidden;
                     transition: all 0.3s;
+                    grid-column-start: 3;
+                    grid-column-end: 4;
                 }
             
                 .app-bar-navigation.open {
