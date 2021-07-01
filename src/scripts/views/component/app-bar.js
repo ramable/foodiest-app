@@ -134,8 +134,6 @@ class AppBar extends HTMLElement {
                     -moz-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
                     overflow: hidden;
                     transition: all 0.3s;
-                    grid-column-start: 3;
-                    grid-column-end: 4;
                 }
             
                 .app-bar-navigation.open {
