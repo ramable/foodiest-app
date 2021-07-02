@@ -16,7 +16,7 @@ const createRestoListsTemplate = (m) => `
 
 const createDetailRestoTemplate = (m) => `
     <div class="sub-text" tabindex="0">
-        <span class="icon-rating" aria-label="peringkat">&#128970</span>${m.rating} &nbsp &middot &nbsp Kota ${m.city}
+        <span class="icon-rating" aria-label="peringkat"><i class="fas fa-star fa-xs"></i></span>${m.rating} &nbsp &middot &nbsp Kota ${m.city}
     </div>
     <h2 tabindex="0"><b>${m.name}</b></h2>
     <div class="detail-text-list">
@@ -54,13 +54,13 @@ const createReviewsTemplate = (m) => `
 
 const createLikeButtonTemplate = () => `
     <div class="like-icon-wrapper">
-        <button aria-label="favoritkan" id="like__button" class="like-icon-button" tabindex="0">&#9829</button>
+        <button aria-label="favoritkan" id="like__button" class="like-icon-button" tabindex="0"><i class="fas fa-heart"></i></button>
     </div>
 `;
 
 const createLikedButtonTemplate = () => `
     <div class="like-icon-wrapper">
-        <button aria-label="hapus dari daftar favorit" id="like__button" class="like-icon-button like-clicked" tabindex="0">&#9829</button>
+        <button aria-label="hapus dari daftar favorit" id="like__button" class="like-icon-button like-clicked" tabindex="0"><i class="fas fa-heart"></i></button>
     </div>
 `;
 

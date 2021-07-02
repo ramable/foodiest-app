@@ -139,14 +139,13 @@
     top: 60vh;
     width: 7rem;
     height: 7rem;
+    font-size: 3rem;
     color: #d6d6d6;
     background-color: white;
-    font-size: 5rem;
-    font-family: 'Segoe UI';
     border-radius: 50%;
     border-style: solid;
     border-width: 2px;
-    border-color: #f3f4f5;
+    border-color: #e9e9e9;
     display: inline-flex;
     align-items: center;
     justify-content: center;

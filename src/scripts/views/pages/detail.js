@@ -28,7 +28,7 @@ const Detail = {
                 <div id="customer__reviews"></div>
                 <div id="hidden__reviews" class="hidden"></div>
             </div>
-            <button class="btn-seeMore more-review" id="btn__moreReview">Tampilkan Semua</button>
+            <button class="btn-seeMore more-review" id="btn__moreReview">Tampilkan Semua<i class="fas fa-caret-down" style="margin-left: .7rem;"></i></button>
             <div class="hidden-overlay" id="hidden__overlay"></div>
         </section>
         `;
@@ -72,19 +72,19 @@ const Detail = {
                     case 'hidden':
                         hiddenContainer.classList.remove('hidden');
                         hiddenOverlay.classList.add('hidden');
-                        btnMoreReview.innerHTML = 'Tampilkan Sedikit';
+                        btnMoreReview.innerHTML = 'Tampilkan Sedikit<i class="fas fa-caret-up" style="margin-left: .7rem;">';
                         btnMoreReview.style.bottom = '0';
                         break;
                     case '':
                         hiddenContainer.classList.add('hidden');
                         hiddenOverlay.classList.remove('hidden');
-                        btnMoreReview.innerHTML = 'Tampilkan Semua';
+                        btnMoreReview.innerHTML = 'Tampilkan Semua<i class="fas fa-caret-down" style="margin-left: .7rem;">';
                         btnMoreReview.style.bottom = '8rem';
                         break;
                     default:
                         hiddenContainer.classList.add('hidden');
                         hiddenOverlay.classList.remove('hidden');
-                        btnMoreReview.innerHTML = 'Tampilkan Semua';
+                        btnMoreReview.innerHTML = 'Tampilkan Semua<i class="fas fa-caret-down" style="margin-left: .7rem;">';
                         btnMoreReview.style.bottom = '8rem';
                 }
             });
