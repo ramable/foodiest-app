@@ -171,6 +171,13 @@ class AppBar extends HTMLElement {
                 .btn-close-nav:focus {
                     left: 0;
                 }
+
+                .fa-times {
+                    position: absolute;
+                    top: 2.5rem;
+                    right: 2.5rem;
+                    color: white;
+                }
             }
         </style>
 
@@ -180,7 +187,7 @@ class AppBar extends HTMLElement {
                     <a href="" aria-label="logo foodiestapp" class="skip-on-tab">FoodiestApp</a>
                 </div>
                 <div class="app-bar-menu">
-                    <button id="burger__button" class="skip-on-tab" aria-label="tombol menu">☰</button>
+                    <button id="burger__button" class="skip-on-tab" aria-label="tombol menu"><i class="fas fa-bars"></i></button>
                 </div>
                 <div id="navigation__drawer" class="app-bar-navigation">
                     <ul class="nav-list">
@@ -190,7 +197,7 @@ class AppBar extends HTMLElement {
                     </ul>
                     <button class="btn-close-nav close-drawer hidden">tombol tutup menu</button>
                 </div>
-                <div class="sidebar-overlay hidden close-drawer"></div>
+                <div class="sidebar-overlay hidden close-drawer"><i class="fas fa-times fa-lg"></i></div>
             </nav>
         </header>
         `;
