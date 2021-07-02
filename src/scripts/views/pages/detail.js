@@ -26,7 +26,10 @@ const Detail = {
             <div class="reviews-wrapper">
                 <h6 tabindex="0"><b>Ulasan (<span id="reviews__amount"></span>)</b></h6>
                 <div id="customer__reviews"></div>
+                <div id="hidden__reviews" class="hidden"></div>
             </div>
+            <button class="btn-seeMore more-review" id="btn__moreReview">Tampilkan Semua</button>
+            <div class="hidden-overlay" id="hidden__overlay"></div>
         </section>
         `;
     },
@@ -41,19 +44,51 @@ const Detail = {
 
         const imageResto = document.querySelector('#detail__image');
         const restoContainer = document.querySelector('#detail__content');
-        const reviewContainer = document.querySelector('#customer__reviews');
+        const reviewsContainer = document.querySelector('#customer__reviews');
         const reviewAmount = document.querySelector('#reviews__amount');
         const foodWrapper = document.querySelector('#food__menus');
         const drinkWrapper = document.querySelector('#drink__menus');
+        const hiddenContainer = document.querySelector('#hidden__reviews');
+        const hiddenOverlay = document.querySelector('#hidden__overlay');
+        const btnMoreReview = document.querySelector('#btn__moreReview');
 
         try {
             restoContainer.innerHTML = createDetailRestoTemplate(dataResto);
             imageResto.innerHTML = createimageDetailTemplate(dataResto);
             reviewAmount.innerHTML = dataReviews.length;
 
-            dataReviews.forEach((m) => {
-                reviewContainer.innerHTML += createReviewsTemplate(m);
+            const lastReviews = dataReviews.slice(0, 2);
+            const hiddenReviews = dataReviews.slice(2, dataReviews.length);
+
+            lastReviews.forEach((m) => {
+                reviewsContainer.innerHTML += createReviewsTemplate(m);
             });
+            hiddenReviews.forEach((m) => {
+                hiddenContainer.innerHTML += createReviewsTemplate(m);
+            });
+
+            btnMoreReview.addEventListener('click', () => {
+                switch (hiddenContainer.getAttribute('class')) {
+                    case 'hidden':
+                        hiddenContainer.classList.remove('hidden');
+                        hiddenOverlay.classList.add('hidden');
+                        btnMoreReview.innerHTML = 'Tampilkan Sedikit';
+                        btnMoreReview.style.bottom = '0';
+                        break;
+                    case '':
+                        hiddenContainer.classList.add('hidden');
+                        hiddenOverlay.classList.remove('hidden');
+                        btnMoreReview.innerHTML = 'Tampilkan Semua';
+                        btnMoreReview.style.bottom = '8rem';
+                        break;
+                    default:
+                        hiddenContainer.classList.add('hidden');
+                        hiddenOverlay.classList.remove('hidden');
+                        btnMoreReview.innerHTML = 'Tampilkan Semua';
+                        btnMoreReview.style.bottom = '8rem';
+                }
+            });
+
             dataFood.forEach((m) => {
                 foodWrapper.innerHTML += `${m.name}, `;
             });
@@ -73,7 +108,7 @@ const Detail = {
 
                 if (dots.style.display === 'none') {
                     dots.style.display = 'inline';
-                    moreText.classList.add('hidden');
+                    moreText.classList.toggle('hidden');
                     buttonSeeMore.innerHTML = 'Lihat Selengkapnya';
                 } else {
                     dots.style.display = 'none';
