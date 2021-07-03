@@ -2,7 +2,6 @@ import {
     createDetailRestoTemplate,
     createimageDetailTemplate,
     createReviewsTemplate,
-
 } from '../templates/template-creator';
 import UrlParser from '../../routes/url-parser';
 import RestoDataSource from '../../data/data-source';
@@ -24,12 +23,32 @@ const Detail = {
                 </li>
             </ul>
             <div class="reviews-wrapper">
-                <h6 tabindex="0"><b>Ulasan (<span id="reviews__amount"></span>)</b></h6>
+                <div class="review-head-wrapper">
+                    <h6 tabindex="0"><b>Ulasan (<span id="reviews__amount"></span>)</b></h6>
+                    <button class="btn btn-primary" id="btn__addReview"><i class="fas fa-edit"></i> Tambah Ulasan</button>
+                </div>
                 <div id="customer__reviews"></div>
                 <div id="hidden__reviews" class="hidden"></div>
             </div>
-            <button class="btn-seeMore more-review" id="btn__moreReview">Tampilkan Semua<i class="fas fa-caret-down" style="margin-left: .7rem;"></i></button>
+            <button class="btn-seeMore btn-more-review" id="btn__moreReview">Tampilkan Semua<i class="fas fa-caret-down" style="margin-left: .7rem;"></i></button>
             <div class="hidden-overlay" id="hidden__overlay"></div>
+            <div id="modal__review" class="modal hidden close-input">
+                <div class="modal-content">
+                    <div class="container">
+                        <div class="modal-header">
+                            <h3><i class="fas fa-comment-dots fa-lg"></i><b>Berikan Ulasanmu</b></h3>
+                        </div>
+                        <div class="modal-body">
+                            <input class="input-username" id="input__name" type="text" placeholder="Username">
+                            <textarea id="input__review" placeholder="Please give me your Feedback :)"></textarea>
+                        </div>
+                        <div class="modal-footer">
+                        <button class="btn btn-secondary close-input" id="btn__cancel">Cancel</button>
+                        <button class="btn btn-primary" id="btn__submit">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
         `;
     },
@@ -51,6 +70,8 @@ const Detail = {
         const hiddenContainer = document.querySelector('#hidden__reviews');
         const hiddenOverlay = document.querySelector('#hidden__overlay');
         const btnMoreReview = document.querySelector('#btn__moreReview');
+        const btnAddReview = document.querySelector('#btn__addReview');
+        const modalReview = document.querySelector('#modal__review');
 
         try {
             restoContainer.innerHTML = createDetailRestoTemplate(dataResto);
@@ -127,6 +148,20 @@ const Detail = {
                     pictureId: dataResto.pictureId,
                     description: dataResto.description,
                 }
+            });
+
+            btnAddReview.addEventListener('click', () => {
+                modalReview.classList.remove('hidden');
+            });
+
+            document.querySelectorAll('.close-input').forEach((elm) => {
+                elm.addEventListener('click', (e) => {
+                    if (e.target === document.querySelector('#modal__review')) {
+                        modalReview.classList.add('hidden');
+                    } else if (e.target === document.querySelector('#btn__cancel')) {
+                        modalReview.classList.add('hidden');
+                    }
+                });
             });
         } catch (err) {
             console.log(`Error: ${err}`);

@@ -44,7 +44,7 @@ class HeroBanner extends HTMLElement {
                 margin: 2rem 0 1rem;
                 font-size: var(--font-size);
                 font-weight: 300;
-                border-radius: .3rem;
+                border-radius: .35rem;
                 border: none;
                 width: 100%;
             }
@@ -54,26 +54,7 @@ class HeroBanner extends HTMLElement {
             }
             
             .search-bar button {
-                padding: 1.5rem;
                 width: 100%;
-                font-size: var(--font-size);
-                font-weight: 700;
-                border: none;
-                border-radius: .3rem;
-                background-color: #ef6c00;
-                color: white;
-                cursor: pointer;
-            }
-            
-            .search-bar button:hover {
-                background-color: #fa9a4b;
-            }
-            
-            .search-bar button:active {
-                background-color: #fa9a4b;
-                border-style: solid;
-                border-width: 4px;
-                border-color: #f7ca4291;
             }
 
             @media screen and (max-width: 320px) {
@@ -108,11 +89,6 @@ class HeroBanner extends HTMLElement {
                     padding: 1.25rem;
                     font-size: var(--min-font-size);
                 }
-            
-                .search-bar button {
-                    padding: 1.25rem;
-                    font-size: var(--min-font-size);
-                }
             }
             
             @media screen and (max-width: 1024px) {
@@ -140,7 +116,7 @@ class HeroBanner extends HTMLElement {
                         <h5 tabindex="0">Yuk, cari restoran favorit kamu di sini!</h5>
                         <div class="search-bar">
                             <input id="input__keyword" type="text" placeholder="Cari berdasarkan nama, kategori, dan menu ...">
-                            <button id="search__button" tabindex="-1" type="button">Cari</button>
+                            <button id="search__button" class="btn btn-primary" tabindex="-1" type="button">Cari</button>
                         </div>
                     </div>
                 </div>

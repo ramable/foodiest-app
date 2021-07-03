@@ -57,3 +57,39 @@
 .skip-link:focus {
     top: 0;
 }
+
+.btn {
+    padding: 1.5rem;
+    font-size: var(--font-size);
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: .35rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.btn-primary {
+    color: white;
+    background-color: #ef6c00;
+    border-color: transparent;
+    background-color: #ef6c00;
+}
+
+.btn-secondary {
+    color: #ef6c00;
+    background-color: white;
+    border-style: solid;
+    border-color: #ef6c00;
+    border-width: 2px;
+}
+
+.btn-primary:hover {
+    background-color: #fa9a4b;
+}
+
+.btn-secondary:hover {
+    opacity: 0.6;
+}
+
+.btn:active {
+    opacity: 0.4;
+}
