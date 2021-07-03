@@ -1,6 +1,5 @@
 .row-resto {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
     gap: 6rem 5rem;
     padding: 4rem 0;
 }

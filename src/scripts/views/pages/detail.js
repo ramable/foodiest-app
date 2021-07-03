@@ -127,6 +127,7 @@ const Detail = {
 
             LikeButtonInitiator.init({
                 likeButtonContainer: document.querySelector('#like__wrapper'),
+                favoriteCartNumber: document.querySelector('.favorite-cart'),
                 resto: {
                     id: dataResto.id,
                     name: dataResto.name,
