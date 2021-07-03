@@ -6,6 +6,7 @@ import {
 import UrlParser from '../../routes/url-parser';
 import RestoDataSource from '../../data/data-source';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
+import PostReview from '../../utils/post-review';
 
 const Detail = {
     async render() {
@@ -32,23 +33,7 @@ const Detail = {
             </div>
             <button class="btn-seeMore btn-more-review" id="btn__moreReview">Tampilkan Semua<i class="fas fa-caret-down" style="margin-left: .7rem;"></i></button>
             <div class="hidden-overlay" id="hidden__overlay"></div>
-            <div id="modal__review" class="modal hidden close-input">
-                <div class="modal-content">
-                    <div class="container">
-                        <div class="modal-header">
-                            <h3><i class="fas fa-comment-dots fa-lg"></i><b>Berikan Ulasanmu</b></h3>
-                        </div>
-                        <div class="modal-body">
-                            <input class="input-username" id="input__name" type="text" placeholder="Username">
-                            <textarea id="input__review" placeholder="Please give me your Feedback :)"></textarea>
-                        </div>
-                        <div class="modal-footer">
-                        <button class="btn btn-secondary close-input" id="btn__cancel">Cancel</button>
-                        <button class="btn btn-primary" id="btn__submit">Submit</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <modal-review></modal-review>
         </section>
         `;
     },
@@ -70,8 +55,10 @@ const Detail = {
         const hiddenContainer = document.querySelector('#hidden__reviews');
         const hiddenOverlay = document.querySelector('#hidden__overlay');
         const btnMoreReview = document.querySelector('#btn__moreReview');
-        const btnAddReview = document.querySelector('#btn__addReview');
         const modalReview = document.querySelector('#modal__review');
+        const btnSubmitReview = document.querySelector('#btn__submit');
+        const inputUsername = document.querySelector('#input__name');
+        const inputReview = document.querySelector('#input__review');
 
         try {
             restoContainer.innerHTML = createDetailRestoTemplate(dataResto);
@@ -150,7 +137,7 @@ const Detail = {
                 }
             });
 
-            btnAddReview.addEventListener('click', () => {
+            document.querySelector('#btn__addReview').addEventListener('click', () => {
                 modalReview.classList.remove('hidden');
             });
 
@@ -162,6 +149,13 @@ const Detail = {
                         modalReview.classList.add('hidden');
                     }
                 });
+            });
+
+            btnSubmitReview.addEventListener('click', () => {
+                if (inputUsername.value !== '' && inputReview.value !== '') {
+                    PostReview(url, inputUsername.value, inputReview.value);
+                    modalReview.classList.add('hidden');
+                }
             });
         } catch (err) {
             console.log(`Error: ${err}`);

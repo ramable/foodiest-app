@@ -77,10 +77,6 @@
         width: 25rem;
         margin: 2rem 0;
     }
-
-    .modal-footer {
-        grid-template-columns: 1fr 1fr;
-    }
 }
 
 @media screen and (max-width: 1024px) {
@@ -99,13 +95,6 @@
         position: fixed;
         left: 0;
         z-index: 99;
-    }
-
-    .modal-header,
-    .modal-body,
-    .modal-footer {
-        padding-left: 0;
-        padding-right: 0;
     }
 }
 
