@@ -135,8 +135,10 @@
     align-items: center;
 }
 
-.review-head-wrapper h6 {
+.review-head-wrapper h6,
+button {
     margin-bottom: 0;
+    z-index: 1;
 }
 
 .like-icon-wrapper {

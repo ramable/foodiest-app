@@ -8,7 +8,7 @@ class EmptyState extends HTMLElement {
         <div class="empty-state-wrapper container hidden" id="empty__state">
             <img src="../images/undraw_page_not_found_su7k.svg" alt="">
             <h1>Ooops... &#128580</h1>
-            <h4>Konten tidak ditemukan</h4>
+            <h4>Gagal memuat request</h4>
             <p>Coba periksa lagi koneksimu, atau klik <a href="">muat ulang</a></p>
         </div>
         <div class="empty-state-wrapper container hidden" id="not__found">

@@ -8,7 +8,7 @@ const Favorite = {
         return `
         <a href="#content__favorite" id="skip__button" class="skip-link" tabindex="1">Menuju ke konten</a>
         <section class="body-favorite" id="content__favorite">
-            <div class="empty-state-wrapper fixed-state container" id="empty__state">
+            <div class="empty-state-wrapper container" id="empty__state">
                 <img src="../images/undraw_empty_xct9.svg" alt="">
                 <h1 tabindex="0">Hmm... kosong &#128564</h1>
                 <p tabindex="0">Kamu belum punya restaurant favorit. <br> Yuk, isi dengan restaurant terbaik lainnya <a href="#/home" aria-label="tautan menuju homepage">di sini</a></p>

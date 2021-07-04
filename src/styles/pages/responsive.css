@@ -9,16 +9,12 @@
         padding: 4rem 0;
     }
 
-    .body-detail {
-        padding: 2rem 0;
-    }
-
     .row-resto {
         grid-template-columns: 1fr !important;
     }
 
     .card-text {
-        padding: 0 2rem 1rem;
+        padding: auto 2rem;
     }
 
     .rating-wrapper {
@@ -75,7 +71,6 @@
 
     .empty-state-wrapper img {
         width: 25rem;
-        margin: 2rem 0;
     }
 }
 
@@ -86,14 +81,12 @@
         padding: 1rem 0;
     }
 
-    .like-icon-button {
-        top: 62.5vh;
+    .body-detail {
+        margin-top: 2rem !important;
     }
 
-    .fixed-state {
-        position: fixed;
-        left: 0;
-        z-index: 99;
+    .like-icon-button {
+        top: 62.5vh;
     }
 }
 

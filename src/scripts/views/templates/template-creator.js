@@ -2,14 +2,13 @@ import CONFIG from '../../globals/config';
 
 const createRestoListsTemplate = (m) => `
     <a tabindex="0" class="col-resto" href="/#/detail/${m.id}" aria-label="tautan menuju laman detail restoran ${m.name} dengan rating ${m.rating} dari kota ${m.city}">
-            <div tabindex="0" class="rating-wrapper"><span class="icon-rating" aria-label="peringkat">&#128970</span>${m.rating}</div>
+            <div tabindex="0" class="rating-wrapper"><span class="icon-rating" aria-label="peringkat"><i class="fas fa-star fa-xs"></i></span>${m.rating}</div>
         <div class="card-image">
             <img tabindex="0" src="${CONFIG.BASE_IMAGE_URL_SMALL + m.pictureId}" alt="foto restoran ${m.name} dari kota ${m.city}">
         </div>
         <div class="card-text">
-            <span tabindex="0" class="sub-text">&#128204 Kota ${m.city}</span>
             <h5 tabindex="0" class="resto-name"><b>${m.name}</b></h5>
-            <p tabindex="0" class="describe">${m.description}</p>
+            <span tabindex="0" class="sub-text"><i class="fas fa-map-marker-alt fa-lg" style="color: #ef6c00; margin-right: .5rem;"></i>Kota ${m.city}</span>
         </div>
     </a>
 `;
@@ -40,7 +39,7 @@ const createimageDetailTemplate = (m) => `
 `;
 
 const createReviewsTemplate = (m) => `
-    <div class="review-card" tabindex="0">
+    <div class="review-card skip-review" tabindex="0">
         <div class="review-header-card">
             <img src="./images/avatar-image.png" alt="">
             <div class="reviewer-wrapper">

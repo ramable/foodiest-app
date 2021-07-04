@@ -9,10 +9,10 @@ const Home = {
             <a href="#content__home" id="skip__button" class="skip-link" tabindex="1">Menuju ke konten</a>
             <hero-banner></hero-banner>
             <section class="body-home" id="content__home">
+                <empty-state></empty-state>
                 <div class="container">
-                    <empty-state></empty-state>
                     <div id="content__wrapper">
-                        <div id="recommend__resto" >
+                        <div id="recommend__resto">
                             <h3 id="heading__page" class="skip-on-tab" tabindex="0"><b>Rekomendasi Restoran &#128071</b></h3>
                             <div id="resto__card" class="row-resto"></div>
                         </div>
@@ -28,20 +28,19 @@ const Home = {
     },
 
     async afterRender() {
-        const dataResto = await RestoDataSource.restoLists();
-        const restoContainer = document.querySelector('#resto__card');
-        const skipButton = document.querySelector('#skip__button');
-        const recommendList = document.querySelector('#recommend__resto');
-        const searchAmount = document.querySelector('#title__search');
-        const restoSearchCard = document.querySelector('#search__card');
-        const inputKeyword = document.querySelector('#input__keyword');
-        const searchButton = document.querySelector('#search__button');
-        const searchWrapper = document.querySelector('#searchResult__resto');
-        const searchNotFound = document.querySelector('#not__found');
-        const captionNotFound = document.querySelector('#caption__notFound');
-        const contentWrapper = document.querySelector('#content__wrapper');
-
         try {
+            const dataResto = await RestoDataSource.restoLists();
+            const restoContainer = document.querySelector('#resto__card');
+            const skipButton = document.querySelector('#skip__button');
+            const recommendList = document.querySelector('#recommend__resto');
+            const searchAmount = document.querySelector('#title__search');
+            const restoSearchCard = document.querySelector('#search__card');
+            const inputKeyword = document.querySelector('#input__keyword');
+            const searchButton = document.querySelector('#search__button');
+            const searchWrapper = document.querySelector('#searchResult__resto');
+            const searchNotFound = document.querySelector('#not__found');
+            const captionNotFound = document.querySelector('#caption__notFound');
+
             dataResto.forEach((m) => {
                 restoContainer.innerHTML += createRestoListsTemplate(m);
             });
@@ -94,7 +93,8 @@ const Home = {
             });
         } catch (err) {
             document.querySelector('#empty__state').classList.remove('hidden');
-            contentWrapper.classList.add('hidden');
+            document.querySelector('#content__wrapper').classList.add('hidden');
+            document.querySelector('.background-hero').classList.add('hidden');
         }
     },
 };

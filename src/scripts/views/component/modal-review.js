@@ -145,12 +145,12 @@ class ModalReview extends HTMLElement {
             <div class="modal-content">
                 <div class="container">
                     <div class="modal-header">
-                        <h3><i class="fas fa-comment-dots fa-lg"></i><b>Berikan Ulasanmu</b></h3>
+                        <h3 tabindex="0"><i class="fas fa-comment-dots fa-lg"></i><b>Berikan Ulasanmu</b></h3>
                     </div>
                     <form>
                         <div class="modal-body">
-                            <input class="input-username" id="input__name" type="text" placeholder="Username" required>
-                            <textarea id="input__review" name="reviews" placeholder="Please send me your feedback :)" maxlength=250 required ></textarea>
+                            <input class="input-username" id="input__name" type="text" placeholder="Username" aria-label="masukan username" required>
+                            <textarea id="input__review" name="reviews" placeholder="Please send me your feedback :)" maxlength=250 aria-label="masukan ulasanmu" required ></textarea>
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-secondary close-input" id="btn__cancel">Cancel</button>

@@ -13,6 +13,7 @@ const Detail = {
         return `
         <div class="container" id="like__wrapper"></div>
         <div class="detail-image" id="detail__image"></div>
+        <empty-state></empty-state>
         <section class="body-detail container" id="detail">
             <div id="detail__content"></div>
             <ul class="menu-text-list" tabindex="0">
@@ -26,12 +27,12 @@ const Detail = {
             <div class="reviews-wrapper">
                 <div class="review-head-wrapper">
                     <h6 tabindex="0"><b>Ulasan (<span id="reviews__amount"></span>)</b></h6>
-                    <button class="btn btn-primary" id="btn__addReview"><i class="fas fa-edit"></i> Tambah Ulasan</button>
+                    <button tabindex="0" class="btn btn-primary" id="btn__addReview"><i class="fas fa-edit"></i> Tambah Ulasan</button>
                 </div>
                 <div id="customer__reviews"></div>
                 <div id="hidden__reviews" class="hidden"></div>
             </div>
-            <button class="btn-seeMore btn-more-review" id="btn__moreReview">Tampilkan Semua<i class="fas fa-caret-down" style="margin-left: .7rem;"></i></button>
+            <button class="btn-seeMore btn-more-review skip-review" id="btn__moreReview">Tampilkan Semua<i class="fas fa-caret-down" style="margin-left: .7rem;"></i></button>
             <div class="hidden-overlay" id="hidden__overlay"></div>
             <modal-review></modal-review>
         </section>
@@ -39,28 +40,28 @@ const Detail = {
     },
 
     async afterRender() {
-        const url = UrlParser.parseActiveUrlWithoutCombiner();
-        const dataResto = await RestoDataSource.detailResto(url.id);
-        const dataReviews = dataResto.customerReviews.reverse();
-        const dataFood = dataResto.menus.foods;
-        const dataDrink = dataResto.menus.drinks;
-        const dataCategories = dataResto.categories;
-
-        const imageResto = document.querySelector('#detail__image');
-        const restoContainer = document.querySelector('#detail__content');
-        const reviewsContainer = document.querySelector('#customer__reviews');
-        const reviewAmount = document.querySelector('#reviews__amount');
-        const foodWrapper = document.querySelector('#food__menus');
-        const drinkWrapper = document.querySelector('#drink__menus');
-        const hiddenContainer = document.querySelector('#hidden__reviews');
-        const hiddenOverlay = document.querySelector('#hidden__overlay');
-        const btnMoreReview = document.querySelector('#btn__moreReview');
-        const modalReview = document.querySelector('#modal__review');
-        const btnSubmitReview = document.querySelector('#btn__submit');
-        const inputUsername = document.querySelector('#input__name');
-        const inputReview = document.querySelector('#input__review');
-
         try {
+            const url = UrlParser.parseActiveUrlWithoutCombiner();
+            const dataResto = await RestoDataSource.detailResto(url.id);
+            const dataReviews = dataResto.customerReviews.reverse();
+            const dataFood = dataResto.menus.foods;
+            const dataDrink = dataResto.menus.drinks;
+            const dataCategories = dataResto.categories;
+
+            const imageResto = document.querySelector('#detail__image');
+            const restoContainer = document.querySelector('#detail__content');
+            const reviewsContainer = document.querySelector('#customer__reviews');
+            const reviewAmount = document.querySelector('#reviews__amount');
+            const foodWrapper = document.querySelector('#food__menus');
+            const drinkWrapper = document.querySelector('#drink__menus');
+            const hiddenContainer = document.querySelector('#hidden__reviews');
+            const hiddenOverlay = document.querySelector('#hidden__overlay');
+            const btnMoreReview = document.querySelector('#btn__moreReview');
+            const modalReview = document.querySelector('#modal__review');
+            const btnSubmitReview = document.querySelector('#btn__submit');
+            const inputUsername = document.querySelector('#input__name');
+            const inputReview = document.querySelector('#input__review');
+
             restoContainer.innerHTML = createDetailRestoTemplate(dataResto);
             imageResto.innerHTML = createimageDetailTemplate(dataResto);
             reviewAmount.innerHTML = dataReviews.length;
@@ -140,6 +141,9 @@ const Detail = {
 
             document.querySelector('#btn__addReview').addEventListener('click', () => {
                 modalReview.classList.remove('hidden');
+                document.querySelectorAll('.skip-review').forEach((e) => {
+                    e.tabIndex = '1';
+                });
             });
 
             document.querySelectorAll('.close-input').forEach((elm) => {
@@ -159,7 +163,8 @@ const Detail = {
                 }
             });
         } catch (err) {
-            console.log(`Error: ${err}`);
+            document.querySelector('#empty__state').classList.remove('hidden');
+            document.querySelector('#detail').classList.add('hidden');
         }
     },
 };

@@ -104,7 +104,7 @@ class AppBar extends HTMLElement {
 
             @media screen and (max-width: 600px) {
                 .app-bar-navigation {
-                    width: 65vw !important;
+                    width: 60vw !important;
                 }
             }
 
@@ -137,7 +137,7 @@ class AppBar extends HTMLElement {
                     position: absolute;
                     left: -100vw;
                     height: 100vh;
-                    width: 45vw;
+                    width: 40vw;
                     background-color: white;
                     box-shadow: 3px 0 8px rgba(0, 0, 0, 0.18);
                     -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
@@ -203,7 +203,7 @@ class AppBar extends HTMLElement {
                     <ul class="nav-list">
                         <li><a class="close-drawer nav-link" href="#/home">Home</a></li>
                         <li><a class="close-drawer nav-link" href="#/favorite">Favorite<sup class="favorite-cart hidden">2</sup></a></li>
-                        <li><a class="close-drawer nav-link" target="_blank" href="https://github.com/ramable">About Us</a></li>
+                        <li><a class="close-drawer nav-link" target="_blank" href="https://www.dicoding.com/users/ramable">About Us</a></li>
                     </ul>
                     <button class="btn-close-nav close-drawer hidden">tombol tutup menu</button>
                 </div>
