@@ -4,7 +4,7 @@ const createRestoListsTemplate = (m) => `
     <a tabindex="0" class="col-resto" href="/#/detail/${m.id}" aria-label="tautan menuju laman detail restoran ${m.name} dengan rating ${m.rating} dari kota ${m.city}">
             <div tabindex="0" class="rating-wrapper"><span class="icon-rating" aria-label="peringkat"><i class="fas fa-star fa-xs"></i></span>${m.rating}</div>
         <div class="card-image">
-            <img tabindex="0" src="${CONFIG.BASE_IMAGE_URL_SMALL + m.pictureId}" alt="foto restoran ${m.name} dari kota ${m.city}">
+            <img tabindex="0" src="${CONFIG.BASE_IMAGE_URL_SMALL + m.pictureId}" alt="restoran ${m.name} dari kota ${m.city}">
         </div>
         <div class="card-text">
             <h5 tabindex="0" class="resto-name"><b>${m.name}</b></h5>
@@ -35,7 +35,7 @@ const createDetailRestoTemplate = (m) => `
 `;
 
 const createimageDetailTemplate = (m) => `
-    <img src="${CONFIG.BASE_IMAGE_URL_LARGE + m.pictureId}" alt="">
+    <img src="${CONFIG.BASE_IMAGE_URL_LARGE + m.pictureId}" alt="restoran ${m.name} dari kota ${m.city}" tabindex="0">
 `;
 
 const createReviewsTemplate = (m) => `

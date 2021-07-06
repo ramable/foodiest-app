@@ -86,7 +86,7 @@ class HeroBanner extends HTMLElement {
             
                 .search-bar input {
                     margin-top: 1rem;
-                    padding: 1.25rem;
+                    padding: 1.75rem;
                     font-size: var(--min-font-size);
                 }
             }
@@ -112,11 +112,11 @@ class HeroBanner extends HTMLElement {
         <div class="background-hero">
                 <div class="container hero-text-wrapper">
                     <div class="hero-text">
-                        <h1 tabindex="0">Udah makan belum?</h1>
-                        <h5 tabindex="0">Yuk, cari restoran favorit kamu di sini!</h5>
+                        <h1 tabindex="0" class="skip-on-tab">Udah makan belum?</h1>
+                        <h5 tabindex="0" class="skip-on-tab">Yuk, cari restoran favorit kamu di sini!</h5>
                         <div class="search-bar">
-                            <input id="input__keyword" type="text" placeholder="Cari berdasarkan nama, kategori, dan menu ...">
-                            <button id="search__button" class="btn btn-primary" tabindex="-1" type="button">Cari</button>
+                            <input class="skip-on-tab" id="input__keyword" type="text" placeholder="Cari berdasarkan nama, kategori, dan menu ...">
+                            <button id="search__button" class="btn btn-primary skip-on-tab" type="button">Cari</button>
                         </div>
                     </div>
                 </div>

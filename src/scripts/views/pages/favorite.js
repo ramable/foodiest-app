@@ -6,7 +6,6 @@ import {
 const Favorite = {
     async render() {
         return `
-        <a href="#content__favorite" id="skip__button" class="skip-link" tabindex="1">Menuju ke konten</a>
         <section class="body-favorite" id="content__favorite">
             <div class="empty-state-wrapper container" id="empty__state">
                 <img src="../images/undraw_empty_xct9.svg" alt="">

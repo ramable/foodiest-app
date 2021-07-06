@@ -6,14 +6,13 @@ import {
 const Home = {
     async render() {
         return `
-            <a href="#content__home" id="skip__button" class="skip-link" tabindex="1">Menuju ke konten</a>
             <hero-banner></hero-banner>
             <section class="body-home" id="content__home">
                 <empty-state></empty-state>
                 <div class="container">
                     <div id="content__wrapper">
                         <div id="recommend__resto">
-                            <h3 id="heading__page" class="skip-on-tab" tabindex="0"><b>Rekomendasi Restoran &#128071</b></h3>
+                            <h3 tabindex="0" id="heading__page"><b>Rekomendasi Restoran &#128071</b></h3>
                             <div id="resto__card" class="row-resto"></div>
                         </div>
                         <div id="searchResult__resto" class="hidden">

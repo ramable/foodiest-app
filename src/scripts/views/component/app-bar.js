@@ -201,11 +201,11 @@ class AppBar extends HTMLElement {
                 </div>
                 <div id="navigation__drawer" class="app-bar-navigation">
                     <ul class="nav-list">
-                        <li><a class="close-drawer nav-link" href="#/home">Home</a></li>
-                        <li><a class="close-drawer nav-link" href="#/favorite">Favorite<sup class="favorite-cart hidden">2</sup></a></li>
-                        <li><a class="close-drawer nav-link" target="_blank" href="https://www.dicoding.com/users/ramable">About Us</a></li>
+                        <li><a class="close-drawer nav-link skip-on-tab" href="#/home">Home</a></li>
+                        <li><a class="close-drawer nav-link skip-on-tab" href="#/favorite">Favorite<sup class="favorite-cart hidden">2</sup></a></li>
+                        <li><a class="close-drawer nav-link skip-on-tab" target="_blank" href="https://www.dicoding.com/users/ramable">About Us</a></li>
                     </ul>
-                    <button class="btn-close-nav close-drawer hidden">tombol tutup menu</button>
+                    <button class="btn-close-nav close-drawer hidden skip-on-tab">tombol tutup menu</button>
                 </div>
                 <div class="sidebar-overlay hidden close-drawer"><i class="fas fa-times fa-lg"></i></div>
             </nav>
