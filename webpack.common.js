@@ -11,15 +11,26 @@ module.exports = {
   },
   module: {
     rules: [{
-      test: /\.css$/,
-      use: [{
-          loader: 'style-loader',
-        },
-        {
-          loader: 'css-loader',
-        },
-      ],
-    }],
+        test: /\.css$/,
+        use: [{
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+          },
+        ]
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[path][name].[ext]',
+            outputPath: 'images/'
+          }
+        }]
+      }
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -28,9 +39,9 @@ module.exports = {
     }),
     new CopyWebpackPlugin({
       patterns: [{
-        from: path.resolve(__dirname, 'src/public/'),
-        to: path.resolve(__dirname, 'dist/'),
-      }],
+        from: path.resolve(__dirname, 'src/public'),
+        to: path.resolve(__dirname, 'dist/')
+      }]
     }),
     new ServiceWorkerWebpackPlugin({
       entry: path.resolve(__dirname, 'src/scripts/sw.js'),

@@ -1,3 +1,5 @@
+import heroImage from '../../../public/images/hero-image_4.jpg';
+
 class HeroBanner extends HTMLElement {
     connectedCallback() {
         this.render();
@@ -7,7 +9,7 @@ class HeroBanner extends HTMLElement {
         this.innerHTML = `
         <style>
             .background-hero {
-                background-image: url(/images/heros/hero-image_4.jpg);
+                background-image: url(${heroImage});
                 background-size: cover;
                 background-position: center center;
                 background-repeat: no-repeat;
@@ -37,6 +39,10 @@ class HeroBanner extends HTMLElement {
             
             .hero-text h1 {
                 font-weight: 800;
+            }
+
+            .hero-text h2 {
+                font-size: var(--h5);
             }
             
             .search-bar input {
@@ -76,7 +82,7 @@ class HeroBanner extends HTMLElement {
                     grid-template-columns: 1fr !important;
                 }
             
-                .hero-text h5 {
+                .hero-text h2 {
                     font-size: var(--font-size);
                 }
             
@@ -112,11 +118,11 @@ class HeroBanner extends HTMLElement {
         <div class="background-hero">
                 <div class="container hero-text-wrapper">
                     <div class="hero-text">
-                        <h1 tabindex="0" class="skip-on-tab">Udah makan belum?</h1>
-                        <h5 tabindex="0" class="skip-on-tab">Yuk, cari restoran favorit kamu di sini!</h5>
+                        <h1 tabindex="0">Udah makan belum?</h1>
+                        <h2 tabindex="0">Yuk, cari restoran favorit kamu di sini!</h2>
                         <div class="search-bar">
-                            <input class="skip-on-tab" id="input__keyword" type="text" placeholder="Cari berdasarkan nama, kategori, dan menu ...">
-                            <button id="search__button" class="btn btn-primary skip-on-tab" type="button">Cari</button>
+                            <input id="input__keyword" type="text" placeholder="Cari berdasarkan nama, kategori, dan menu ...">
+                            <button id="search__button" class="btn btn-primary" type="button">Cari</button>
                         </div>
                     </div>
                 </div>

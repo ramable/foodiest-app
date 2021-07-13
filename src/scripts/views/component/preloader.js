@@ -1,3 +1,5 @@
+import loaderImage from '../../../public/images/loader.gif';
+
 class PreLoader extends HTMLElement {
     connectedCallback() {
         this.render();
@@ -40,7 +42,7 @@ class PreLoader extends HTMLElement {
         <div id="preloader" class="preloader-container">
             <div class="preloader-wrapper">
                 <!-- Source Preloader gif: https://tenor.com/view/loading-load-wait-load-bar-time-remaining-gif-13708895 -->
-                <img src="./images/loader.gif" alt="">
+                <img src="${loaderImage}" alt="">
                 <p>Lagi loading ...</p>
             </div>
         </div>

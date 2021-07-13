@@ -2,13 +2,14 @@ import FavoriteRestoIdb from '../../data/database-idb';
 import {
     createRestoListsTemplate
 } from '../templates/template-creator';
+import emptyImage from '../../../public/images/undraw_empty_xct9.svg';
 
 const Favorite = {
     async render() {
         return `
         <section class="body-favorite" id="content__favorite">
             <div class="empty-state-wrapper container" id="empty__state">
-                <img src="../images/undraw_empty_xct9.svg" alt="">
+                <img src="${emptyImage}" alt="">
                 <h1 tabindex="0">Hmm... kosong &#128564</h1>
                 <p tabindex="0">Kamu belum punya restaurant favorit. <br> Yuk, isi dengan restaurant terbaik lainnya <a href="#/home" aria-label="tautan menuju homepage">di sini</a></p>
             </div>
@@ -41,9 +42,9 @@ const Favorite = {
         skipButton.addEventListener('click', (event) => {
             event.preventDefault();
             headingPage.focus();
-            document.querySelectorAll('.skip-on-tab').forEach((e) => {
-                e.tabIndex = '1';
-            });
+            // document.querySelectorAll('.skip-on-tab').forEach((e) => {
+            //     e.tabIndex = '1';
+            // });
         });
     },
 };

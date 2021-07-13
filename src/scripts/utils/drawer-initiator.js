@@ -2,7 +2,6 @@ import UrlParser from '../routes/url-parser';
 
 const navList = document.querySelector('.nav-list');
 const appBarBrand = document.querySelector('.app-bar-brand');
-const buttonCloseNav = document.querySelector('.btn-close-nav');
 const sideBarOverlay = document.querySelector('.sidebar-overlay');
 
 const DrawerInitiator = {
@@ -50,7 +49,6 @@ const DrawerInitiator = {
         content.classList.toggle('fixed');
         navList.classList.toggle('show');
         appBarBrand.classList.add('hidden');
-        buttonCloseNav.classList.remove('hidden');
         sideBarOverlay.classList.remove('hidden');
     },
 
@@ -66,7 +64,6 @@ const DrawerInitiator = {
         content.classList.remove('fixed');
         navList.classList.remove('show');
         appBarBrand.classList.remove('hidden');
-        buttonCloseNav.classList.add('hidden');
         sideBarOverlay.classList.add('hidden');
     },
 

@@ -5,6 +5,10 @@
     object-position: center;
 }
 
+.detail-content h1 {
+    font-size: var(--h2);
+}
+
 .description-wrapper {
     padding-right: 15rem;
 }
@@ -135,7 +139,11 @@
     align-items: center;
 }
 
-.review-head-wrapper h6,
+.review-head-wrapper h2 {
+    font-size: var(--h6);
+}
+
+.review-head-wrapper h2,
 button {
     margin-bottom: 0;
     z-index: 1;

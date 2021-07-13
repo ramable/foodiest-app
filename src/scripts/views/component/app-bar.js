@@ -92,6 +92,17 @@ class AppBar extends HTMLElement {
                 z-index: -1;
             }
 
+            .sidebar-overlay button {
+                position: absolute;
+                top: 0;
+                right: 0;
+                color: white;
+                z-index: 10;
+                background-color: transparent;
+                border: none;
+                padding: 3rem;
+            }
+
             .favorite-cart {
                 padding: 0 .75rem;
                 background-color: red;
@@ -167,47 +178,27 @@ class AppBar extends HTMLElement {
                     display: block !important;
                     color: #1a1a1a;
                 }
-            
-                .btn-close-nav {
-                    padding: 3rem;
-                    margin-left: 4rem;
-                    color: transparent;
-                    background-color: transparent;
-                    border: none;
-                    position: relative;
-                    left: -35rem;
-                }
-            
-                .btn-close-nav:focus {
-                    left: 0;
-                }
-
-                .fa-times {
-                    position: absolute;
-                    top: 2.5rem;
-                    right: 2.5rem;
-                    color: white;
-                }
             }
         </style>
 
         <header class="app-bar" id="app__bar">
             <nav class="container wrapper-header">
                 <div class="app-bar-brand">
-                    <a href="" aria-label="logo foodiestapp" class="skip-on-tab">FoodiestApp</a>
+                    <a href="" aria-label="logo foodiestapp">FoodiestApp</a>
                 </div>
                 <div class="app-bar-menu">
-                    <button id="burger__button" class="skip-on-tab" aria-label="tombol menu"><i class="fas fa-bars"></i></button>
+                    <button id="burger__button" aria-label="tombol menu"><i class="fas fa-bars"></i></button>
                 </div>
                 <div id="navigation__drawer" class="app-bar-navigation">
                     <ul class="nav-list">
-                        <li><a class="close-drawer nav-link skip-on-tab" href="#/home">Home</a></li>
-                        <li><a class="close-drawer nav-link skip-on-tab" href="#/favorite">Favorite<sup class="favorite-cart hidden">2</sup></a></li>
-                        <li><a class="close-drawer nav-link skip-on-tab" target="_blank" href="https://www.dicoding.com/users/ramable">About Us</a></li>
+                        <li><a class="close-drawer nav-link" href="#/home">Home</a></li>
+                        <li><a class="close-drawer nav-link" href="#/favorite">Favorite<sup class="favorite-cart hidden">2</sup></a></li>
+                        <li><a class="close-drawer nav-link" target="_blank" rel="noopener" href="https://www.dicoding.com/users/ramable">About Us</a></li>
                     </ul>
-                    <button class="btn-close-nav close-drawer hidden skip-on-tab">tombol tutup menu</button>
                 </div>
-                <div class="sidebar-overlay hidden close-drawer"><i class="fas fa-times fa-lg"></i></div>
+                <div class="sidebar-overlay hidden">
+                    <button class="close-drawer" aria-label="tombol tutup menu"><i class="fas fa-times fa-lg"></i></button>
+                </div>
             </nav>
         </header>
         `;

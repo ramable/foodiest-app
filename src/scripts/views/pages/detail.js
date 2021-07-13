@@ -15,7 +15,7 @@ const Detail = {
         <div class="detail-image" id="detail__image"></div>
         <empty-state></empty-state>
         <section class="body-detail container" id="detail">
-            <div id="detail__content"></div>
+            <div id="detail__content" class="detail-content"></div>
             <ul class="menu-text-list" tabindex="0">
                 <li><b>Makanan:</b><br>
                     <span id="food__menus"></span>
@@ -26,7 +26,7 @@ const Detail = {
             </ul>
             <div class="reviews-wrapper">
                 <div class="review-head-wrapper">
-                    <h6 tabindex="0"><b>Ulasan (<span id="reviews__amount"></span>)</b></h6>
+                    <h2 tabindex="0"><b>Ulasan (<span id="reviews__amount"></span>)</b></h2>
                     <button tabindex="0" class="btn btn-primary" id="btn__addReview"><i class="fas fa-edit"></i> Tambah Ulasan</button>
                 </div>
                 <div id="customer__reviews"></div>
@@ -141,9 +141,9 @@ const Detail = {
 
             document.querySelector('#btn__addReview').addEventListener('click', () => {
                 modalReview.classList.remove('hidden');
-                document.querySelectorAll('.skip-review').forEach((e) => {
-                    e.tabIndex = '1';
-                });
+                // document.querySelectorAll('.skip-review').forEach((e) => {
+                //     e.tabIndex = '1';
+                // });
             });
 
             document.querySelectorAll('.close-input').forEach((elm) => {

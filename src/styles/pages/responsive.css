@@ -120,16 +120,10 @@
 
 @media only screen and (min-width: 1533px) {
     .container {
-        width: 1330px !important;
+        width: 1320px !important;
     }
 
     .row-resto {
         grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-@media only screen and (min-width: 1920px) {
-    .container {
-        width: 1400px !important;
     }
 }

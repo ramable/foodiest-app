@@ -1,4 +1,5 @@
 import CONFIG from '../../globals/config';
+import avatarImage from '../../../public/images/avatar-image.png';
 
 const createRestoListsTemplate = (m) => `
     <a tabindex="0" class="col-resto" href="/#/detail/${m.id}" aria-label="tautan menuju laman detail restoran ${m.name} dengan rating ${m.rating} dari kota ${m.city}">
@@ -7,7 +8,7 @@ const createRestoListsTemplate = (m) => `
             <img tabindex="0" src="${CONFIG.BASE_IMAGE_URL_SMALL + m.pictureId}" alt="restoran ${m.name} dari kota ${m.city}">
         </div>
         <div class="card-text">
-            <h5 tabindex="0" class="resto-name"><b>${m.name}</b></h5>
+            <h4 tabindex="0" class="resto-name"><b>${m.name}</b></h4>
             <span tabindex="0" class="sub-text"><i class="fas fa-map-marker-alt fa-lg" style="color: #ef6c00; margin-right: .5rem;"></i>Kota ${m.city}</span>
         </div>
     </a>
@@ -17,7 +18,7 @@ const createDetailRestoTemplate = (m) => `
     <div class="sub-text" tabindex="0">
         <span class="icon-rating" aria-label="peringkat"><i class="fas fa-star fa-xs"></i></span>${m.rating} &nbsp &middot &nbsp Kota ${m.city}
     </div>
-    <h2 tabindex="0"><b>${m.name}</b></h2>
+    <h1 tabindex="0"><b>${m.name}</b></h1>
     <div class="detail-text-list">
         <div tabindex="0">
             <span class="title-list">Alamat: &nbsp</span>
@@ -41,7 +42,7 @@ const createimageDetailTemplate = (m) => `
 const createReviewsTemplate = (m) => `
     <div class="review-card skip-review" tabindex="0">
         <div class="review-header-card">
-            <img src="./images/avatar-image.png" alt="">
+            <img src="${avatarImage}" alt="">
             <div class="reviewer-wrapper">
                 <span><b>${m.name}</b></span>
                 <span class="review-date">${m.date}</span>
