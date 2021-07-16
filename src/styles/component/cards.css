@@ -57,11 +57,3 @@
     border-radius: 0 5rem 5rem 0;
     font-weight: bolder;
 }
-
-.describe {
-    max-width: 25ch;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    color: #a1a1a1;
-}

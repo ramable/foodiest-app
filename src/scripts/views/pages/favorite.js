@@ -42,9 +42,6 @@ const Favorite = {
         skipButton.addEventListener('click', (event) => {
             event.preventDefault();
             headingPage.focus();
-            // document.querySelectorAll('.skip-on-tab').forEach((e) => {
-            //     e.tabIndex = '1';
-            // });
         });
     },
 };

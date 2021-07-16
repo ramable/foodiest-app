@@ -141,9 +141,6 @@ const Detail = {
 
             document.querySelector('#btn__addReview').addEventListener('click', () => {
                 modalReview.classList.remove('hidden');
-                // document.querySelectorAll('.skip-review').forEach((e) => {
-                //     e.tabIndex = '1';
-                // });
             });
 
             document.querySelectorAll('.close-input').forEach((elm) => {

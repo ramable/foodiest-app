@@ -86,9 +86,6 @@ const Home = {
                     document.body.scrollTop = windowHeight / 1.2;
                     document.documentElement.scrollTop = windowHeight / 1.2;
                 }
-                // document.querySelectorAll('.skip-on-tab').forEach((e) => {
-                //     e.tabIndex = '1';
-                // });
             });
         } catch (err) {
             document.querySelector('#empty__state').classList.remove('hidden');
