@@ -4,7 +4,7 @@ const CONFIG = {
     BASE_IMAGE_URL_LARGE: 'https://restaurant-api.dicoding.dev/images/large/',
     API_KEY: 12345,
     PRECACHE_PREFIX: 'foodiestApp',
-    PRECACHE_SUFFIX: 'v1',
+    PRECACHE_SUFFIX: 'v2',
     PRECACHE_NAME: 'precache',
     API_CACHE_NAME: 'api-cache',
     IMAGE_CACHE_NAME: 'img-cache',

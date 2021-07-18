@@ -6,8 +6,9 @@ const swRegister = async () => {
         } catch (err) {
             console.log('ServiceWorker is not registered', err);
         }
+    } else {
+        console.log('Serviceworker is not supported in this browser');
     }
-    console.log('Serviceworker is not supported in this browser');
 };
 
 export default swRegister;

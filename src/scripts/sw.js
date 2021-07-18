@@ -1,11 +1,13 @@
 import 'regenerator-runtime';
 
 import {
-    precacheAndRoute
+    precacheAndRoute,
+    cleanupOutdatedCaches
 } from 'workbox-precaching';
 import {
+    setCacheNameDetails,
+    skipWaiting,
     clientsClaim,
-    setCacheNameDetails
 } from 'workbox-core';
 import {
     registerRoute
@@ -22,17 +24,16 @@ import {
 } from 'workbox-cacheable-response';
 import CONFIG from './globals/config';
 
+skipWaiting();
+clientsClaim();
+
 const {
-    BASE_URL,
     PRECACHE_NAME,
     PRECACHE_PREFIX,
     PRECACHE_SUFFIX,
     API_CACHE_NAME,
     IMAGE_CACHE_NAME,
 } = CONFIG;
-
-self.skipWaiting();
-clientsClaim();
 
 setCacheNameDetails({
     prefix: PRECACHE_PREFIX,
@@ -57,20 +58,25 @@ precacheAndRoute(
 );
 
 registerRoute(
-    ({
-        url,
-        request
-    }) => url.origin === BASE_URL && request.destination !== 'image',
+    /^https:\/\/restaurant-api\.dicoding\.dev\/(?:(list|detail))/,
     new NetworkFirst({
-        cacheName: API_CACHE_NAME
+        cacheName: API_CACHE_NAME,
+        plugins: [
+            new CacheableResponsePlugin({
+                statuses: [0, 200]
+            }),
+            new ExpirationPlugin({
+                maxAgeSeconds: 60 * 60 * 24 * 30,
+                maxEntries: 100,
+            }),
+        ],
     }),
 );
 
 registerRoute(
     ({
-        url,
         request
-    }) => url.origin === BASE_URL && request.destination === 'image',
+    }) => request.destination === 'image',
     new CacheFirst({
         cacheName: IMAGE_CACHE_NAME,
         plugins: [
@@ -78,9 +84,11 @@ registerRoute(
                 statuses: [0, 200]
             }),
             new ExpirationPlugin({
-                maxEntries: 40,
                 maxAgeSeconds: 30 * 24 * 60 * 60,
+                maxEntries: 40,
             }),
         ],
     }),
 );
+
+cleanupOutdatedCaches();

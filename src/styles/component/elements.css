@@ -91,3 +91,9 @@
 .btn:active {
     opacity: 0.4;
 }
+
+.disable {
+    background-color: #d6d6d6;
+    color: #a1a1a1;
+    pointer-events: none !important;
+}

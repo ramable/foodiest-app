@@ -113,6 +113,15 @@ class ModalReview extends HTMLElement {
                 width: 100%;
                 height: 15rem;
             }
+
+            .connection-alert {
+                padding: 1rem 1.5rem;
+                border-radius: 4px;
+                background-color: #f8d7da;
+                color: #842029;
+                margin: 0 30rem 2rem;
+                font-size: var(--font-size);
+            }
             
             .modal-footer {
                 display: grid;
@@ -138,6 +147,11 @@ class ModalReview extends HTMLElement {
                     padding-left: 0;
                     padding-right: 0;
                 }
+
+                .connection-alert {
+                    margin-left: 0;
+                    margin-right: 0;
+                }
             }
         </style>
 
@@ -151,6 +165,9 @@ class ModalReview extends HTMLElement {
                         <div class="modal-body">
                             <input class="input-username" id="input__name" type="text" placeholder="Username" aria-label="masukan username" required>
                             <textarea id="input__review" name="reviews" placeholder="Please send me your feedback :)" maxlength=250 aria-label="masukan ulasanmu" required ></textarea>
+                        </div>
+                        <div id="connection__alert" class="connection-alert hidden">
+                            <span>Not connected! Sambungkan internet untuk submit ulasan</span>
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-secondary close-input" id="btn__cancel">Cancel</button>

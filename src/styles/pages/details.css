@@ -198,3 +198,53 @@ button {
 .like-clicked {
     color: #ef6c00 !important;
 }
+
+.toast-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.toast-success {
+    position: fixed;
+    z-index: 99;
+    bottom: 5rem;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    border-radius: 4px;
+    background-color: #04aa6d;
+    color: white;
+    font-size: var(--font-size);
+    display: none;
+}
+
+.toast-success.show {
+    display: block;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}

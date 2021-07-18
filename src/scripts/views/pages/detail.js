@@ -24,6 +24,11 @@ const Detail = {
                     <span id="drink__menus"></span>
                 </li>
             </ul>
+            <div class="toast-wrapper">
+                <div id="success__toast" class="toast-success">
+                    <span>Yeay! Ulasan berhasil di submit</span>
+                </div>
+            </div>
             <div class="reviews-wrapper">
                 <div class="review-head-wrapper">
                     <h2 tabindex="0"><b>Ulasan (<span id="reviews__amount"></span>)</b></h2>
@@ -61,6 +66,8 @@ const Detail = {
             const btnSubmitReview = document.querySelector('#btn__submit');
             const inputUsername = document.querySelector('#input__name');
             const inputReview = document.querySelector('#input__review');
+            const connectionAlert = document.querySelector('#connection__alert');
+            const successToast = document.querySelector('#success__toast');
 
             restoContainer.innerHTML = createDetailRestoTemplate(dataResto);
             imageResto.innerHTML = createimageDetailTemplate(dataResto);
@@ -141,6 +148,13 @@ const Detail = {
 
             document.querySelector('#btn__addReview').addEventListener('click', () => {
                 modalReview.classList.remove('hidden');
+                if (window.navigator.onLine === false) {
+                    connectionAlert.classList.remove('hidden');
+                    btnSubmitReview.classList.add('disable');
+                } else {
+                    connectionAlert.classList.add('hidden');
+                    btnSubmitReview.classList.remove('disable');
+                }
             });
 
             document.querySelectorAll('.close-input').forEach((elm) => {
@@ -152,11 +166,11 @@ const Detail = {
                     }
                 });
             });
-
             btnSubmitReview.addEventListener('click', () => {
                 if (inputUsername.value !== '' && inputReview.value !== '') {
                     PostReview(url, inputUsername.value, inputReview.value);
                     modalReview.classList.add('hidden');
+                    successToast.classList.toggle('show');
                 }
             });
         } catch (err) {
