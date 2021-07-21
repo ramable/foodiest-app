@@ -5,8 +5,8 @@ import {
 } from '../templates/template-creator';
 import UrlParser from '../../routes/url-parser';
 import RestoDataSource from '../../data/data-source';
-import LikeButtonInitiator from '../../utils/like-button-initiator';
 import PostReview from '../../utils/post-review';
+import LikeButtonPresenter from '../../utils/like-button-initiator';
 
 const Detail = {
     async render() {
@@ -133,9 +133,8 @@ const Detail = {
                 }
             });
 
-            LikeButtonInitiator.init({
+            LikeButtonPresenter.init({
                 likeButtonContainer: document.querySelector('#like__wrapper'),
-                favoriteCartNumber: document.querySelector('.favorite-cart'),
                 resto: {
                     id: dataResto.id,
                     name: dataResto.name,

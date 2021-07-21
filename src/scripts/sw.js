@@ -24,7 +24,7 @@ import {
 } from 'workbox-cacheable-response';
 import CONFIG from './globals/config';
 
-skipWaiting();
+self.skipWaiting();
 clientsClaim();
 
 const {

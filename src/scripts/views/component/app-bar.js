@@ -103,16 +103,6 @@ class AppBar extends HTMLElement {
                 padding: 3rem;
             }
 
-            .favorite-cart {
-                padding: 0 .75rem;
-                background-color: red;
-                color: white;
-                border-radius: 50%;
-                font-size: 1rem;
-                font-weight: 700;
-                position: absolute;
-            }
-
             @media screen and (max-width: 600px) {
                 .app-bar-navigation {
                     width: 60vw !important;
@@ -192,7 +182,7 @@ class AppBar extends HTMLElement {
                 <div id="navigation__drawer" class="app-bar-navigation">
                     <ul class="nav-list">
                         <li><a class="close-drawer nav-link" href="#/home">Home</a></li>
-                        <li><a class="close-drawer nav-link" href="#/favorite">Favorite<sup class="favorite-cart hidden">2</sup></a></li>
+                        <li><a class="close-drawer nav-link" href="#/favorite">Favorite</a></li>
                         <li><a class="close-drawer nav-link" target="_blank" rel="noopener" href="https://www.dicoding.com/users/ramable">About Us</a></li>
                     </ul>
                 </div>

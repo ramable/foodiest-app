@@ -23,15 +23,19 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|jpe?g|gif|svg)$/i,
+        test: /\.(png|jpe?g|gif|svg|ico|webp)$/i,
         use: [{
-          loader: 'file-loader',
-          options: {
-            name: '[path][name].[ext]',
-            outputPath: 'images/'
-          }
-        }]
-      }
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]',
+              outputPath: 'images/'
+            }
+          },
+          {
+            loader: 'image-webpack-loader',
+          },
+        ]
+      },
     ],
   },
   plugins: [

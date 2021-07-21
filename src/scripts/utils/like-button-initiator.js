@@ -4,14 +4,12 @@ import {
     createLikedButtonTemplate
 } from '../views/templates/template-creator';
 
-const LikeButtonInitiator = {
+const LikeButtonPresenter = {
     async init({
         likeButtonContainer,
-        favoriteCartNumber,
         resto,
     }) {
         this._likeButtonContainer = likeButtonContainer;
-        this._favoriteCartNumber = favoriteCartNumber;
         this._resto = resto;
 
         await this._renderButton();
@@ -23,7 +21,7 @@ const LikeButtonInitiator = {
         } = this._resto;
 
         if (await this._isRestoExist(id)) {
-            this._renderLiked();
+            this._renderLiked();;
         } else {
             this._renderLike();
         }
@@ -39,12 +37,9 @@ const LikeButtonInitiator = {
 
         const likeButton = document.querySelector('#like__button');
         likeButton.addEventListener('click', async () => {
-            const amountFavorite = await FavoriteRestoIdb.getAllResto();
             await FavoriteRestoIdb.putResto(this._resto);
             likeButton.classList.add('like-clicked');
             this._renderButton();
-            this._favoriteCartNumber.classList.remove('hidden');
-            this._favoriteCartNumber.innerHTML = amountFavorite.length + 1;
         });
     },
 
@@ -53,16 +48,11 @@ const LikeButtonInitiator = {
 
         const likeButton = document.querySelector('#like__button');
         likeButton.addEventListener('click', async () => {
-            const amountFavorite = await FavoriteRestoIdb.getAllResto();
             await FavoriteRestoIdb.deleteResto(this._resto.id);
             likeButton.classList.remove('like-clicked');
             this._renderButton();
-            this._favoriteCartNumber.innerHTML = amountFavorite.length - 1;
-            if (amountFavorite.length === 1) {
-                this._favoriteCartNumber.classList.add('hidden');
-            }
         });
     },
 };
 
-export default LikeButtonInitiator;
+export default LikeButtonPresenter;
