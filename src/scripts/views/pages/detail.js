@@ -6,7 +6,7 @@ import {
 import UrlParser from '../../routes/url-parser';
 import RestoDataSource from '../../data/data-source';
 import PostReview from '../../utils/post-review';
-import LikeButtonPresenter from '../../utils/like-button-initiator';
+import LikeButtonPresenter from '../../utils/like-button-presenter';
 
 const Detail = {
     async render() {
