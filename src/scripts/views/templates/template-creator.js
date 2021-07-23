@@ -1,16 +1,19 @@
 import CONFIG from '../../globals/config';
 
 const createRestoListsTemplate = (m) => `
-    <a tabindex="0" class="col-resto" href="/#/detail/${m.id}" aria-label="tautan menuju laman detail restoran ${m.name} dengan rating ${m.rating} dari kota ${m.city}">
-            <div tabindex="0" class="rating-wrapper"><span class="icon-rating" aria-label="peringkat"><i class="fas fa-star fa-xs"></i></span>${m.rating}</div>
+    <div tabindex="0" class="col-resto" aria-label="tautan menuju laman detail restoran ${m.name} dengan rating ${m.rating} dari kota ${m.city}">
+        <div tabindex="0" class="rating-wrapper">
+            <span class="icon-rating" aria-label="peringkat"><i class="fas fa-star fa-xs"></i></span>
+            ${m.rating}
+        </div>
         <div class="card-image">
             <img tabindex="0" src="${CONFIG.BASE_IMAGE_URL_SMALL + m.pictureId}" alt="restoran ${m.name} dari kota ${m.city}">
         </div>
         <div class="card-text">
-            <h4 tabindex="0" class="resto-name"><b>${m.name}</b></h4>
+            <h4 tabindex="0" class="resto-name"><a href="/#/detail/${m.id}">${m.name}</a></h4>
             <span tabindex="0" class="sub-text"><i class="fas fa-map-marker-alt fa-lg" style="color: #ef6c00; margin-right: .5rem;"></i>Kota ${m.city}</span>
         </div>
-    </a>
+    </div>
 `;
 
 const createDetailRestoTemplate = (m) => `
@@ -41,7 +44,7 @@ const createimageDetailTemplate = (m) => `
 const createReviewsTemplate = (m) => `
     <div class="review-card skip-review" tabindex="0">
         <div class="review-header-card">
-            <img src="../../public/images/avatar-image.png" alt="">
+            <img src="../../images/avatar-image.png" alt="">
             <div class="reviewer-wrapper">
                 <span><b>${m.name}</b></span>
                 <span class="review-date">${m.date}</span>
@@ -59,7 +62,7 @@ const createLikeButtonTemplate = () => `
 
 const createLikedButtonTemplate = () => `
     <div class="like-icon-wrapper">
-        <button aria-label="hapus dari daftar favorit" id="like__button" class="like-icon-button like-clicked" tabindex="0"><i class="fas fa-heart"></i></button>
+        <button aria-label="hapus dari daftar favorit" id="unlike__button" class="like-icon-button like-clicked" tabindex="0"><i class="fas fa-heart"></i></button>
     </div>
 `;
 

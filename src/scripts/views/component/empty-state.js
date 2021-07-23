@@ -8,13 +8,13 @@ class EmptyState extends HTMLElement {
 
     render() {
         this.innerHTML = `
-        <div class="empty-state-wrapper container hidden" id="empty__state">
+        <div class="empty-state-wrapper hidden" id="empty__state">
             <img src="${pageNotFound}" alt="">
             <h1>Ooops... &#128580</h1>
             <h4>Gagal memuat request</h4>
             <p>Coba periksa lagi koneksimu, atau klik <a href="">muat ulang</a></p>
         </div>
-        <div class="empty-state-wrapper container hidden" id="not__found">
+        <div class="empty-state-wrapper hidden" id="search__not__found">
             <img src="${searchNotFound}" alt="">
             <h1>Whoops... &#128558</h1>
             <h4>Restoran yang kamu cari tidak ada</h4>

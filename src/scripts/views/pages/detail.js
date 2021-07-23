@@ -7,6 +7,7 @@ import UrlParser from '../../routes/url-parser';
 import RestoDataSource from '../../data/data-source';
 import PostReview from '../../utils/post-review';
 import LikeButtonPresenter from '../../utils/like-button-presenter';
+import FavoriteRestoIdb from '../../data/database-idb';
 
 const Detail = {
     async render() {
@@ -135,6 +136,7 @@ const Detail = {
 
             LikeButtonPresenter.init({
                 likeButtonContainer: document.querySelector('#like__wrapper'),
+                favoriteRestaurants: FavoriteRestoIdb,
                 resto: {
                     id: dataResto.id,
                     name: dataResto.name,

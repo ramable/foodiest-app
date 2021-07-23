@@ -37,7 +37,7 @@ const Home = {
             const inputKeyword = document.querySelector('#input__keyword');
             const searchButton = document.querySelector('#search__button');
             const searchWrapper = document.querySelector('#searchResult__resto');
-            const searchNotFound = document.querySelector('#not__found');
+            const searchNotFound = document.querySelector('#search__not__found');
             const captionNotFound = document.querySelector('#caption__notFound');
 
             dataResto.forEach((m) => {
