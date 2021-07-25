@@ -3,6 +3,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
 const imageminPngquant = require('imagemin-pngquant');
+const WebpackPwaManifest = require('webpack-pwa-manifest');
 const {
   InjectManifest
 } = require('workbox-webpack-plugin');
@@ -26,7 +27,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|jpe?g|gif|svg|ico|webp)$/i,
+        test: /\.(png|jpe?g|gif|svg)$/i,
         use: [{
           loader: 'file-loader',
           options: {
@@ -63,6 +64,33 @@ module.exports = {
         imageminPngquant({
           quality: [0.3, 0.5],
         }),
+      ],
+    }),
+    new WebpackPwaManifest({
+      name: 'FoodiestApp',
+      short_name: 'FoodApp',
+      description: 'Free Restaurants catalogue app for you',
+      start_url: 'src/templates/index.html',
+      background_color: '#ef6c00',
+      theme_color: '#ef6c00',
+      display: 'standalone',
+      orientation: 'portrait',
+      publicPath: '../',
+      filename: 'public/manifest.json',
+      includeDirectory: true,
+      ios: true,
+      icons: [{
+          src: path.resolve(__dirname, 'src/public/images/icons/icon.png'),
+          sizes: [72, 96, 128, 192, 256, 384, 512],
+          destination: 'public/images/icons',
+          purpose: 'any maskable',
+        },
+        {
+          src: path.resolve(__dirname, 'src/public/images/icons/icon.png'),
+          size: 512,
+          destination: 'public/images/icons',
+          ios: true,
+        },
       ],
     }),
   ],

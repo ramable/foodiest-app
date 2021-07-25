@@ -41,18 +41,6 @@ const createimageDetailTemplate = (m) => `
     <img src="${CONFIG.BASE_IMAGE_URL_LARGE + m.pictureId}" alt="restoran ${m.name} dari kota ${m.city}" tabindex="0">
 `;
 
-const createReviewsTemplate = (m) => `
-    <div class="review-card skip-review" tabindex="0">
-        <div class="review-header-card">
-            <div class="reviewer-wrapper">
-                <span><b>${m.name}</b></span>
-                <span class="review-date">${m.date}</span>
-            </div>
-        </div>
-        <p>${m.review}</p>
-    </div>
-`;
-
 const createLikeButtonTemplate = () => `
     <div class="like-icon-wrapper">
         <button aria-label="favoritkan" id="like__button" class="like-icon-button" tabindex="0"><i class="fas fa-heart"></i></button>
@@ -71,5 +59,4 @@ export {
     createDetailRestoTemplate,
     createLikeButtonTemplate,
     createLikedButtonTemplate,
-    createReviewsTemplate,
 };

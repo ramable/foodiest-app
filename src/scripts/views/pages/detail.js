@@ -1,7 +1,6 @@
 import {
     createDetailRestoTemplate,
     createimageDetailTemplate,
-    createReviewsTemplate,
 } from '../templates/template-creator';
 import '../component/modal-review';
 import UrlParser from '../../routes/url-parser';
@@ -9,6 +8,7 @@ import RestoDataSource from '../../data/data-source';
 import PostReview from '../../utils/post-review';
 import LikeButtonPresenter from '../../utils/like-button-presenter';
 import FavoriteRestoIdb from '../../data/database-idb';
+import avatarImage from '../../../public/images/assets/avatar-image.png';
 
 const Detail = {
     async render() {
@@ -73,17 +73,6 @@ const Detail = {
 
             restoContainer.innerHTML = createDetailRestoTemplate(dataResto);
             imageResto.innerHTML = createimageDetailTemplate(dataResto);
-            reviewAmount.innerHTML = dataReviews.length;
-
-            const lastReviews = dataReviews.slice(0, 2);
-            const hiddenReviews = dataReviews.slice(2, dataReviews.length);
-
-            lastReviews.forEach((m) => {
-                reviewsContainer.innerHTML += createReviewsTemplate(m);
-            });
-            hiddenReviews.forEach((m) => {
-                hiddenContainer.innerHTML += createReviewsTemplate(m);
-            });
 
             btnMoreReview.addEventListener('click', () => {
                 switch (hiddenContainer.getAttribute('class')) {
@@ -148,6 +137,32 @@ const Detail = {
                 }
             });
 
+            reviewAmount.innerHTML = dataReviews.length;
+            const lastReviews = dataReviews.slice(0, 2);
+            const hiddenReviews = dataReviews.slice(2, dataReviews.length);
+
+            lastReviews.forEach((m) => {
+                reviewsContainer.innerHTML += showReviewsTemplate(m);
+            });
+            hiddenReviews.forEach((m) => {
+                hiddenContainer.innerHTML += showReviewsTemplate(m);
+            });
+
+            function showReviewsTemplate(m) {
+                return `
+                    <div class="review-card skip-review" tabindex="0">
+                        <div class="review-header-card">
+                            <img src="${avatarImage}" alt="avatar reviewer">
+                            <div class="reviewer-wrapper">
+                                <span><b>${m.name}</b></span>
+                                <span class="review-date">${m.date}</span>
+                            </div>
+                        </div>
+                        <p>${m.review}</p>
+                    </div>
+                `;
+            }
+
             document.querySelector('#btn__addReview').addEventListener('click', () => {
                 modalReview.classList.remove('hidden');
                 if (window.navigator.onLine === false) {
@@ -168,6 +183,7 @@ const Detail = {
                     }
                 });
             });
+
             btnSubmitReview.addEventListener('click', () => {
                 if (inputUsername.value !== '' && inputReview.value !== '') {
                     PostReview(url, inputUsername.value, inputReview.value);
