@@ -44,7 +44,6 @@ const createimageDetailTemplate = (m) => `
 const createReviewsTemplate = (m) => `
     <div class="review-card skip-review" tabindex="0">
         <div class="review-header-card">
-            <img src="../../images/avatar-image.png" alt="">
             <div class="reviewer-wrapper">
                 <span><b>${m.name}</b></span>
                 <span class="review-date">${m.date}</span>

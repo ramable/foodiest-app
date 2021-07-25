@@ -1,5 +1,5 @@
-import pageNotFound from '../../../public/images/undraw_page_not_found_su7k.svg';
-import searchNotFound from '../../../public/images/undraw_Location_search_re_ttoj.svg';
+import pageNotFound from '../../../public/images/assets/undraw_page_not_found_su7k.svg';
+import searchNotFound from '../../../public/images/assets/undraw_Location_search_re_ttoj.svg';
 
 class EmptyState extends HTMLElement {
     connectedCallback() {

@@ -2,7 +2,7 @@ import FavoriteRestoIdb from '../../data/database-idb';
 import {
     createRestoListsTemplate
 } from '../templates/template-creator';
-import favoriteNotFound from '../../../public/images/undraw_empty_xct9.svg';
+import favoriteNotFound from '../../../public/images/assets/undraw_empty_xct9.svg';
 
 const Favorite = {
     async render() {

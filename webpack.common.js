@@ -1,5 +1,8 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
+const ImageminMozjpeg = require('imagemin-mozjpeg');
+const imageminPngquant = require('imagemin-pngquant');
 const {
   InjectManifest
 } = require('workbox-webpack-plugin');
@@ -25,16 +28,12 @@ module.exports = {
       {
         test: /\.(png|jpe?g|gif|svg|ico|webp)$/i,
         use: [{
-            loader: 'file-loader',
-            options: {
-              name: '[path][name].[ext]',
-              outputPath: 'images/'
-            }
-          },
-          {
-            loader: 'image-webpack-loader',
-          },
-        ]
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'public/images/assets/'
+          }
+        }]
       },
     ],
   },
@@ -45,12 +44,26 @@ module.exports = {
     }),
     new CopyWebpackPlugin({
       patterns: [{
-        from: path.resolve(__dirname, 'src/public'),
-        to: path.resolve(__dirname, 'dist/')
+        from: path.resolve(__dirname, 'src/public/'),
+        to: path.resolve(__dirname, 'dist/public/'),
+        globOptions: {
+          ignore: ['**/assets/**'],
+        },
       }]
     }),
     new InjectManifest({
       swSrc: path.resolve(__dirname, 'src/scripts/sw.js'),
+    }),
+    new ImageminWebpackPlugin({
+      plugins: [
+        ImageminMozjpeg({
+          quality: 50,
+          progressive: true,
+        }),
+        imageminPngquant({
+          quality: [0.3, 0.5],
+        }),
+      ],
     }),
   ],
 };
