@@ -10,7 +10,7 @@ const createRestoListsTemplate = (m) => `
             <img tabindex="0" src="${CONFIG.BASE_IMAGE_URL_SMALL + m.pictureId}" alt="restoran ${m.name} dari kota ${m.city}">
         </div>
         <div class="card-text">
-            <h4 tabindex="0" class="resto-name"><a href="/#/detail/${m.id}">${m.name}</a></h4>
+            <h4 tabindex="0" class="resto-name"><a href="/#/detail/${m.id}"><b>${m.name}</b></a></h4>
             <span tabindex="0" class="sub-text"><i class="fas fa-map-marker-alt fa-lg" style="color: #ef6c00; margin-right: .5rem;"></i>Kota ${m.city}</span>
         </div>
     </div>
@@ -62,7 +62,7 @@ const createLikeButtonTemplate = () => `
 
 const createLikedButtonTemplate = () => `
     <div class="like-icon-wrapper">
-        <button aria-label="hapus dari daftar favorit" id="unlike__button" class="like-icon-button like-clicked" tabindex="0"><i class="fas fa-heart"></i></button>
+        <button aria-label="hapus dari daftar favorit" id="like__button" class="like-icon-button like-clicked" tabindex="0"><i class="fas fa-heart"></i></button>
     </div>
 `;
 
