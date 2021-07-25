@@ -1,4 +1,4 @@
-import heroImage from '../../../public/images/assets/hero-image_4.jpg';
+import heroImage from '../../../public/assets/hero-image_4.jpg';
 
 class HeroBanner extends HTMLElement {
     connectedCallback() {

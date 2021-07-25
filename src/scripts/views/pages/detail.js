@@ -8,7 +8,7 @@ import RestoDataSource from '../../data/data-source';
 import PostReview from '../../utils/post-review';
 import LikeButtonPresenter from '../../utils/like-button-presenter';
 import FavoriteRestoIdb from '../../data/database-idb';
-import avatarImage from '../../../public/images/assets/avatar-image.png';
+import avatarImage from '../../../public/assets/avatar-image.png';
 
 const Detail = {
     async render() {

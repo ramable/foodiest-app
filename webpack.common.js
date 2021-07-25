@@ -32,7 +32,7 @@ module.exports = {
           loader: 'file-loader',
           options: {
             name: '[name].[ext]',
-            outputPath: 'public/images/assets/'
+            outputPath: 'public/assets/'
           }
         }]
       },
@@ -80,15 +80,15 @@ module.exports = {
       includeDirectory: true,
       ios: true,
       icons: [{
-          src: path.resolve(__dirname, 'src/public/images/icons/icon.png'),
+          src: path.resolve(__dirname, 'src/public/icons/icon.png'),
           sizes: [72, 96, 128, 192, 256, 384, 512],
-          destination: 'public/images/icons',
+          destination: 'public/icons',
           purpose: 'any maskable',
         },
         {
-          src: path.resolve(__dirname, 'src/public/images/icons/icon.png'),
+          src: path.resolve(__dirname, 'src/public/icons/icon.png'),
           size: 512,
-          destination: 'public/images/icons',
+          destination: 'public/icons',
           ios: true,
         },
       ],
