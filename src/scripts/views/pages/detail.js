@@ -3,6 +3,7 @@ import {
     createimageDetailTemplate,
     createReviewsTemplate,
 } from '../templates/template-creator';
+import '../component/modal-review';
 import UrlParser from '../../routes/url-parser';
 import RestoDataSource from '../../data/data-source';
 import PostReview from '../../utils/post-review';

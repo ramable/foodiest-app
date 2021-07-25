@@ -1,3 +1,5 @@
+import '../component/hero-banner';
+import '../component/empty-state';
 import RestoDataSource from '../../data/data-source';
 import {
     createRestoListsTemplate

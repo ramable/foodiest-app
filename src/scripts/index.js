@@ -1,9 +1,6 @@
 import 'regenerator-runtime';
 import './views/component/preloader';
 import './views/component/app-bar';
-import './views/component/hero-banner';
-import './views/component/empty-state';
-import './views/component/modal-review';
 import './views/component/footer';
 import '../styles/main.css';
 import App from './views/app';
