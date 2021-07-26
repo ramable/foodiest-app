@@ -1,4 +1,6 @@
-import heroImage from '../../../public/assets/hero-image_4.jpg';
+import heroImageLarge from '../../../public/assets/desktop/hero-image_4.jpg';
+import heroImageMedium from '../../../public/assets/mobile/hero-image_4-medium.jpg';
+import heroImageSmall from '../../../public/assets/mobile/hero-image_4-small.jpg';
 
 class HeroBanner extends HTMLElement {
     connectedCallback() {
@@ -9,7 +11,7 @@ class HeroBanner extends HTMLElement {
         this.innerHTML = `
         <style>
             .background-hero {
-                background-image: url(${heroImage});
+                background-image: url(${heroImageLarge});
                 background-size: cover;
                 background-position: center center;
                 background-repeat: no-repeat;
@@ -78,6 +80,10 @@ class HeroBanner extends HTMLElement {
             }
 
             @media screen and (max-width: 600px) {
+                .background-hero {
+                    background-image: url(${heroImageSmall}) !important;
+                }
+
                 .hero-text-wrapper {
                     grid-template-columns: 1fr !important;
                 }
@@ -99,6 +105,7 @@ class HeroBanner extends HTMLElement {
             
             @media screen and (max-width: 1024px) {
                 .background-hero {
+                    background-image: url(${heroImageMedium});
                     height: 50vh;
                 }
 

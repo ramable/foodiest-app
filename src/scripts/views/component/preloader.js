@@ -1,4 +1,4 @@
-import loaderImage from '../../../public/assets/loader.gif';
+import loaderImage from '../../../public/assets/static/loader.gif';
 
 class PreLoader extends HTMLElement {
     connectedCallback() {

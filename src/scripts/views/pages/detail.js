@@ -1,6 +1,7 @@
 import {
     createDetailRestoTemplate,
     createimageDetailTemplate,
+    createReviewsTemplate,
 } from '../templates/template-creator';
 import '../component/modal-review';
 import UrlParser from '../../routes/url-parser';
@@ -8,7 +9,7 @@ import RestoDataSource from '../../data/data-source';
 import PostReview from '../../utils/post-review';
 import LikeButtonPresenter from '../../utils/like-button-presenter';
 import FavoriteRestoIdb from '../../data/database-idb';
-import avatarImage from '../../../public/assets/avatar-image.png';
+import avatarImage from '../../../public/assets/static/avatar-image.jpg';
 
 const Detail = {
     async render() {
@@ -152,7 +153,7 @@ const Detail = {
                 return `
                     <div class="review-card skip-review" tabindex="0">
                         <div class="review-header-card">
-                            <img src="${avatarImage}" alt="avatar reviewer">
+                            <img class="lazyload" src="${avatarImage}" alt="avatar reviewer">
                             <div class="reviewer-wrapper">
                                 <span><b>${m.name}</b></span>
                                 <span class="review-date">${m.date}</span>
