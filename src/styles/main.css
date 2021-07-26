@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap');
+@import './component/preloader.css';
+@import './component/appbar.css';
+@import './component/hero.css';
 @import './component/empty-states.css';
 @import './component/cards.css';
+@import './component/modal-review.css';
 @import './component/elements.css';
 @import './pages/details.css';
 @import './pages/responsive.css';
