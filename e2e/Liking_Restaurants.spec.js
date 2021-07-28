@@ -21,8 +21,7 @@ Scenario('Liking a restaurant', async ({
 
     I.amOnPage('/');
     I.seeElement('.col-resto');
-    const firstCard = locate('.resto-name a').first();
-    console.log(firstCard);
+    const firstCard = locate('.resto-name a').first()
     const firstTitle = await I.grabTextFrom(firstCard);
     I.seeElement(firstCard);
     I.click(firstCard);

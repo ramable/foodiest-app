@@ -81,6 +81,10 @@
         padding: 1rem 0;
     }
 
+    .col-resto {
+        width: 100%;
+    }
+
     .body-detail {
         margin-top: 2rem !important;
     }

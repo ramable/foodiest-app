@@ -7,11 +7,11 @@ const createRestoListsTemplate = (m) => `
             ${m.rating}
         </div>
         <div class="card-image">
-            <img class="lazyload" tabindex="0" src="${CONFIG.BASE_IMAGE_URL_SMALL + m.pictureId}" alt="restoran ${m.name} dari kota ${m.city}">
+            <img class="lazyload skeleton-loading" tabindex="0" data-src="${CONFIG.BASE_IMAGE_URL_SMALL + m.pictureId}" alt="restoran ${m.name} dari kota ${m.city}">
         </div>
         <div class="card-text">
-            <h4 tabindex="0" class="resto-name"><a href="/#/detail/${m.id}"><b>${m.name}</b></a></h4>
-            <span tabindex="0" class="sub-text"><i class="fas fa-map-marker-alt fa-lg" style="color: #ef6c00; margin-right: .5rem;"></i>Kota ${m.city}</span>
+            <h4 tabindex="0" class="resto-name skeleton-loading"><a href="/#/detail/${m.id}"><b>${m.name}</b></a></h4>
+            <span tabindex="0" class="sub-text skeleton-loading"><i class="fas fa-map-marker-alt fa-lg" style="color: #ef6c00; margin-right: .5rem;"></i>Kota ${m.city}</span>
         </div>
     </div>
 `;
