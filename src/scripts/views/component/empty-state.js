@@ -20,7 +20,7 @@ class EmptyState extends HTMLElement {
             </picture>
             <h1>Ooops... &#128580</h1>
             <h4>Gagal memuat request</h4>
-            <p>Coba periksa lagi koneksimu, atau klik <a href="">muat ulang</a></p>
+            <p>Coba periksa lagi koneksimu, atau klik <a href="#">muat ulang</a></p>
         </div>
         <div class="empty-state-wrapper hidden" id="search__not__found">
             <picture>

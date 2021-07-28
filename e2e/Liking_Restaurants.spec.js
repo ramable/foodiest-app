@@ -21,10 +21,10 @@ Scenario('Liking a restaurant', async ({
 
     I.amOnPage('/');
     I.seeElement('.col-resto');
-    const firstCard = locate('.resto-name a').first()
+    const firstCard = locate('.resto-name a').first();
+    console.log(firstCard);
     const firstTitle = await I.grabTextFrom(firstCard);
     I.seeElement(firstCard);
-    I.click(firstCard);
     I.click(firstCard);
 
     I.seeElement('#like__button');
