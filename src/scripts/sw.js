@@ -6,7 +6,6 @@ import {
 } from 'workbox-precaching';
 import {
     setCacheNameDetails,
-    skipWaiting,
     clientsClaim,
 } from 'workbox-core';
 import {

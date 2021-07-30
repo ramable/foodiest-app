@@ -20,6 +20,23 @@ const Favorite = {
         const favoriteContainer = document.querySelector('#fav__container');
         const skipButton = document.querySelector('#skip__button');
 
+        const showEmptyStateFavorite = () => `
+            <div class="empty-state-wrapper" id="favorite__notFound">
+                <picture>
+                    <source media="(max-width: 600px)" srcset="${favoriteNotFoundSmall}">
+                    <source media="(max-width: 1024px)" srcset="${favoriteNotFoundMedium}">
+                    <img src='${favoriteNotFoundLarge}' alt="favorite not found"></img>
+                </picture>
+                <h1 tabindex="0">Hmm... kosong &#128564</h1>
+                <p tabindex="0">Kamu belum punya restaurant favorit. <br> Yuk, isi dengan restaurant terbaik lainnya <a href="#/home" aria-label="tautan menuju homepage">di sini</a></p>
+            </div>
+        `;
+
+        const showCardFavorite = () => `
+            <h3 id="heading__page" tabindex="0"><b>Restoran Favoritmu &#128077</b></h3>
+            <div id="resto__card" class="row-resto"></div>
+        `;
+
         if (dataResto.length === 0) {
             favoriteContainer.innerHTML = showEmptyStateFavorite();
         } else {
@@ -28,27 +45,6 @@ const Favorite = {
                 document.querySelector('#resto__card').innerHTML += createRestoListsTemplate(m);
             });
         }
-
-        function showEmptyStateFavorite() {
-            return `
-                <div class="empty-state-wrapper" id="favorite__notFound">
-                    <picture>
-                        <source media="(max-width: 600px)" srcset="${favoriteNotFoundSmall}">
-                        <source media="(max-width: 1024px)" srcset="${favoriteNotFoundMedium}">
-                        <img src='${favoriteNotFoundLarge}' alt="favorite not found"></img>
-                    </picture>
-                    <h1 tabindex="0">Hmm... kosong &#128564</h1>
-                    <p tabindex="0">Kamu belum punya restaurant favorit. <br> Yuk, isi dengan restaurant terbaik lainnya <a href="#/home" aria-label="tautan menuju homepage">di sini</a></p>
-                </div>
-            `;
-        };
-
-        function showCardFavorite() {
-            return `
-                <h3 id="heading__page" tabindex="0"><b>Restoran Favoritmu &#128077</b></h3>
-                <div id="resto__card" class="row-resto"></div>
-            `;
-        };
 
         skipButton.addEventListener('click', (event) => {
             event.preventDefault();

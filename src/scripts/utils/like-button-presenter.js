@@ -22,7 +22,7 @@ const LikeButtonPresenter = {
         } = this._resto;
 
         if (await this._isRestoExist(id)) {
-            this._renderLiked();;
+            this._renderLiked();
         } else {
             this._renderLike();
         }

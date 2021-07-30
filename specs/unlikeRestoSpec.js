@@ -1,4 +1,4 @@
-import FavoriteRestoIdb from "../src/scripts/data/database-idb";
+import FavoriteRestoIdb from '../src/scripts/data/database-idb';
 import * as TestFactories from './helpers/testFactories';
 
 const addLikeButtonContainer = () => {

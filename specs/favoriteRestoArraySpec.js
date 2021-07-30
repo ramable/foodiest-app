@@ -1,4 +1,4 @@
-import itActsAsFavoriteRestoModel from "./contract/favoriteRestoContract";
+import itActsAsFavoriteRestoModel from './contract/favoriteRestoContract';
 
 let favoriteRestaurants = [];
 

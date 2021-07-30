@@ -22,7 +22,11 @@
 		"no-underscore-dangle": 0,
         "import/no-extraneous-dependencies": 0,
         "no-restricted-globals": 0,
-        "comma-dangle": 0
+        "comma-dangle": 0,
+        "consistent-return": "off",
+        "no-prototype-builtins": "off",
+        "no-return-assign": 0,
+        "import/prefer-default-export": 0
     },
     "plugins": ["jasmine", "codeceptjs"]
 }

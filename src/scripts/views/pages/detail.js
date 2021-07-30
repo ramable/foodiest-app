@@ -1,7 +1,6 @@
 import {
     createDetailRestoTemplate,
     createimageDetailTemplate,
-    createReviewsTemplate,
 } from '../templates/template-creator';
 import '../component/modal-review';
 import UrlParser from '../../routes/url-parser';
@@ -142,27 +141,25 @@ const Detail = {
             const lastReviews = dataReviews.slice(0, 2);
             const hiddenReviews = dataReviews.slice(2, dataReviews.length);
 
+            const showReviewsTemplate = (m) => `
+                <div class="review-card skip-review" tabindex="0">
+                    <div class="review-header-card">
+                        <img class="lazyload" src="${avatarImage}" alt="avatar reviewer">
+                        <div class="reviewer-wrapper">
+                            <span><b>${m.name}</b></span>
+                            <span class="review-date">${m.date}</span>
+                        </div>
+                    </div>
+                    <p>${m.review}</p>
+                </div>
+            `;
+
             lastReviews.forEach((m) => {
                 reviewsContainer.innerHTML += showReviewsTemplate(m);
             });
             hiddenReviews.forEach((m) => {
                 hiddenContainer.innerHTML += showReviewsTemplate(m);
             });
-
-            function showReviewsTemplate(m) {
-                return `
-                    <div class="review-card skip-review" tabindex="0">
-                        <div class="review-header-card">
-                            <img class="lazyload" src="${avatarImage}" alt="avatar reviewer">
-                            <div class="reviewer-wrapper">
-                                <span><b>${m.name}</b></span>
-                                <span class="review-date">${m.date}</span>
-                            </div>
-                        </div>
-                        <p>${m.review}</p>
-                    </div>
-                `;
-            }
 
             document.querySelector('#btn__addReview').addEventListener('click', () => {
                 modalReview.classList.remove('hidden');
