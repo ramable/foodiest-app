@@ -4,29 +4,40 @@ const {
 const {
   BundleAnalyzerPlugin
 } = require('webpack-bundle-analyzer');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const common = require('./webpack.common');
 
 module.exports = merge(common, {
   mode: 'production',
   module: {
     rules: [{
-      test: /\.js$/,
-      exclude: '/node_modules/',
-      use: [{
-        loader: 'babel-loader',
-        options: {
-          presets: ['@babel/preset-env'],
-        },
-      }],
-    }],
+        test: /\.js$/,
+        exclude: '/node_modules/',
+        use: [{
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
+        }],
+      },
+      {
+        test: /.s?css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      },
+    ],
   },
   plugins: [
     new BundleAnalyzerPlugin({
       analyzerMode: 'static',
       openAnalyzer: false
     }),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+    }),
   ],
   optimization: {
+    minimizer: [new OptimizeCSSAssetsPlugin()],
     splitChunks: {
       chunks: 'all',
       minSize: 20000,
@@ -39,14 +50,14 @@ module.exports = merge(common, {
       cacheGroups: {
         defaultVendors: {
           test: /[\\/]node_modules[\\/]/,
-          priority: -10
+          priority: -10,
         },
         default: {
           minChunks: 2,
           priority: -20,
-          reuseExistingChunk: true
-        }
-      }
-    }
+          reuseExistingChunk: true,
+        },
+      },
+    },
   },
 });
