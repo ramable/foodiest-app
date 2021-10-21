@@ -1,0 +1,59 @@
+{
+  "icons": [
+    {
+      "src": "../public/icons/icon_512x512.9a0dd7572cf6e961416ae75b9d43e20d.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "../public/icons/icon_512x512.9a0dd7572cf6e961416ae75b9d43e20d.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "../public/icons/icon_384x384.6fd81dbd6bd14015d34eb5ce1cf1b107.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "../public/icons/icon_256x256.3fe6d3238ad9e34672c36eeb6ed66270.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "../public/icons/icon_192x192.231ea449077f3535f0e67689f4faab67.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "../public/icons/icon_128x128.89f4d4e731d2cfed765db38c3a8c0c1f.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "../public/icons/icon_96x96.e5ab8671c46347a9734f83028511c0e7.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "../public/icons/icon_72x72.b628245d7cf34c87fcb66c4f1d07cda3.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "name": "FoodiestApp",
+  "short_name": "FoodApp",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": "src/templates/index.html",
+  "description": "Free Restaurants catalogue app for you",
+  "background_color": "#ef6c00",
+  "theme_color": "#ef6c00"
+}
